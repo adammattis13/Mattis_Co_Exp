@@ -1,0 +1,46 @@
+<!-- Header Component - Loaded dynamically into all pages -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+            <img src="assets/images/logo.svg" alt="Mattis & Co." style="height: 40px;">
+        </a>
+        
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                <a href="index.html" class="navbar-link" data-page="index">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a href="consulting.html" class="navbar-link" data-page="consulting">Consulting</a>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#" class="navbar-link dropdown-toggle" data-page="services">
+                    Services <span class="dropdown-arrow">▼</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="experience-architecture.html" class="dropdown-link" data-page="experience-architecture">XA</a></li>
+                    <li><a href="consulting.html#transformation" class="dropdown-link">Transformation</a></li>
+                    <li><a href="consulting.html#ai-advisory" class="dropdown-link">AI Advisory</a></li>
+                    <li><a href="consulting.html#operating-model" class="dropdown-link">Operating Model</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item">
+                <a href="partners.html" class="navbar-link" data-page="partners">Partners</a>
+            </li>
+            <li class="navbar-item">
+                <a href="about.html" class="navbar-link" data-page="about">About</a>
+            </li>
+            <li class="navbar-item">
+                <a href="contact.html" class="navbar-link" data-page="contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="overlay"></div>
