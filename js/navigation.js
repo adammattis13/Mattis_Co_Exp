@@ -27,6 +27,7 @@ class ComponentLoader {
             // After components are loaded, initialize interactions
             this.initializeNavigation();
             this.setActivePage();
+            this.initializeDropdowns();
             
         } catch (error) {
             console.error('Error loading components:', error);
@@ -125,6 +126,69 @@ class ComponentLoader {
     }
 
     /**
+     * Initialize dropdown menus
+     */
+    initializeDropdowns() {
+        const dropdowns = document.querySelectorAll('.navbar-item.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            
+            if (!toggle) return;
+            
+            // Mobile dropdown toggle
+            if (window.innerWidth <= 768) {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close other dropdowns
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                });
+            }
+            
+            // Desktop - prevent navigation on dropdown toggle click
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) {
+                    e.preventDefault();
+                }
+            });
+        });
+        
+        // Close dropdowns when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('.navbar-item.dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+        
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Reset dropdown states on resize
+                if (window.innerWidth > 768) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }, 250);
+        });
+    }
+
+    /**
      * Initialize navigation interactions
      */
     initializeNavigation() {
@@ -153,11 +217,16 @@ class ComponentLoader {
                 if (navbarMenu) navbarMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // Also close any open dropdowns
+                document.querySelectorAll('.navbar-item.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
             });
         }
         
-        // Close mobile menu when clicking a link
-        const navLinks = document.querySelectorAll('.navbar-link');
+        // Close mobile menu when clicking a non-dropdown link
+        const navLinks = document.querySelectorAll('.navbar-link:not(.dropdown-toggle)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -165,6 +234,25 @@ class ComponentLoader {
                     if (navbarMenu) navbarMenu.classList.remove('active');
                     if (overlay) overlay.classList.remove('active');
                     document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking a dropdown link
+        const dropdownLinks = document.querySelectorAll('.dropdown-link');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    if (navbarToggle) navbarToggle.classList.remove('active');
+                    if (navbarMenu) navbarMenu.classList.remove('active');
+                    if (overlay) overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    
+                    // Close dropdown
+                    const dropdown = link.closest('.dropdown');
+                    if (dropdown) {
+                        dropdown.classList.remove('active');
+                    }
                 }
             });
         });

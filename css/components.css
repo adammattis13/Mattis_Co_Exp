@@ -184,6 +184,7 @@
 
 .navbar-item {
     margin-left: var(--spacing-xl);
+    position: relative;
 }
 
 .navbar-link {
@@ -192,6 +193,9 @@
     text-decoration: none;
     transition: color var(--transition-base);
     position: relative;
+    padding: 0.5rem 0;
+    display: inline-flex;
+    align-items: center;
 }
 
 .navbar-link:hover,
@@ -213,6 +217,76 @@
 .navbar-link:hover::after,
 .navbar-link.active::after {
     width: 100%;
+}
+
+/* Dropdown Menu Styles */
+.navbar-item.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    transition: transform var(--transition-base);
+}
+
+/* Desktop Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border: 1px solid var(--light-grey-border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-base);
+    z-index: 1001;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.navbar-item.dropdown:hover .dropdown-menu,
+.navbar-item.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.navbar-item.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    font-weight: 500;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(186, 218, 85, 0.1);
+    color: var(--accent-green);
+}
+
+.dropdown-link.active {
+    background-color: rgba(186, 218, 85, 0.15);
+    color: var(--accent-green);
+    font-weight: 600;
 }
 
 /* Mobile Menu Toggle */
@@ -467,13 +541,15 @@ textarea.form-control {
     .navbar-link {
         width: 100%;
         padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
     }
     
     .navbar-toggle {
         display: flex;
     }
     
-    /* Mobile Dropdown - Override desktop hover behavior */
+    /* Mobile Dropdown */
     .navbar-item.dropdown .dropdown-menu {
         position: static;
         opacity: 1;
@@ -490,6 +566,7 @@ textarea.form-control {
         max-height: 0;
         overflow: hidden;
         transition: max-height var(--transition-base);
+        display: block;
     }
     
     .navbar-item.dropdown.active .dropdown-menu {
@@ -502,6 +579,17 @@ textarea.form-control {
     
     .navbar-item.dropdown.active .dropdown-arrow {
         transform: rotate(180deg);
+    }
+    
+    /* Prevent desktop hover on mobile */
+    .navbar-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    
+    .navbar-item.dropdown:hover .dropdown-arrow {
+        transform: none;
     }
     
     /* Mobile Footer */
