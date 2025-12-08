@@ -12,13 +12,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
+    <!-- Sticky Navigation -->
+    <header class="sticky-nav">
         <nav class="main-nav">
             <!-- Navigation will be inserted by JavaScript -->
         </nav>
@@ -26,121 +26,246 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section - Pure Black -->
-        <section class="hero-black">
-            <div class="hero-black-content">
-                <div class="container">
-                    <div class="hero-text-content">
-                        <!-- This is the only line that changed slightly for perfect control -->
-                        <h1 class="hero-black-title">We don’t advise.<br>We execute.</h1>
-                        <div class="hero-black-divider"></div>
-                        <p class="hero-black-subtitle">Capital for growth. Clarity for scale. Intelligence for the edge.</p>
-                        <div class="hero-cta-black">
-                            <a href="/pages/approach.html" class="btn btn-primary-lime">Begin the Approach</a>
-                            <a href="/pages/contact.html" class="btn btn-outline-white">Let's Move</a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Hero Section -->
+        <section class="hero-section" data-scroll-section>
+            <div class="container">
+                <h1 class="hero-headline">We don't advise.<br>We execute.</h1>
+                <p class="hero-subheadline">Capital for growth. Clarity for scale. Intelligence for the edge.</p>
+                <a href="/pages/contact.html" class="btn-primary-cta">Schedule Diagnostic Call</a>
             </div>
-            <div class="speed-slash"></div>
         </section>
 
         <!-- Who We Are Section -->
-        <section class="section who-we-are">
+        <section class="section who-we-are" data-scroll-section>
             <div class="container">
                 <div class="two-col-layout">
                     <div class="col-text">
                         <h2 class="section-title">Who We Are</h2>
                         <p class="lead-text">We are operator-investors applying military discipline and F1-level precision to transformation and control deals.</p>
-                        <p class="body-text">Our team combines battlefield-tested strategic rigor with elite business architecture. We don't theorize—we execute. We don't consult—we transform.</p>
+                        <p class="body-text">Our team combines battlefield-tested strategic rigor with elite business architecture.</p>
+                        <p class="body-text">We don't theorize—we execute. We don't consult—we transform.</p>
                     </div>
                     <div class="col-visual">
                         <div class="abstract-pattern"></div>
                     </div>
                 </div>
             </div>
-            <div class="speed-slash"></div>
         </section>
 
         <!-- Differentiators Section -->
-        <section class="section differentiators">
+        <section class="section differentiators" data-scroll-section>
             <div class="container">
                 <h2 class="section-title-center">What Sets Us Apart</h2>
                 <div class="diff-grid">
+                    <!-- Micro Nuclear -->
                     <div class="diff-card">
+                        <div class="diff-icon" aria-label="Nuclear energy icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="4" fill="currentColor"/>
+                                <path d="M20 2v8M20 30v8M38 20h-8M10 20H2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
                         <h3 class="diff-title">Micro Nuclear Pioneers</h3>
-                        <p class="diff-text">Actively targeting decentralized small-modular reactors to power AI and data-center growth.</p>
+                        <ul class="diff-list">
+                            <li>Targeting decentralized small-modular reactors</li>
+                            <li>Powering AI and data-center expansion</li>
+                            <li>Clean energy for computational growth</li>
+                        </ul>
                     </div>
+
+                    <!-- Battle-Tested Operators -->
                     <div class="diff-card">
+                        <div class="diff-icon" aria-label="Crosshair targeting icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 0v7M20 33v7M40 20h-7M7 20H0" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
                         <h3 class="diff-title">Battle-Tested Operators</h3>
-                        <p class="diff-text">Military-grade strategic rigor applied to rollups, AI integration, and operating model redesigns.</p>
+                        <ul class="diff-list">
+                            <li>Military-grade strategic rigor</li>
+                            <li>Applied to rollups and AI integration</li>
+                            <li>Operating model redesigns at scale</li>
+                        </ul>
                     </div>
+
+                    <!-- Founder-First PE -->
                     <div class="diff-card">
+                        <div class="diff-icon" aria-label="Factory gear icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 10l2 3 3-2-1 4 3 1-4 1 1 3-3-2-2 3-1-4-3 1 2-3-4-1 3-1-1-3z" fill="currentColor"/>
+                            </svg>
+                        </div>
                         <h3 class="diff-title">Founder-First PE</h3>
-                        <p class="diff-text">Long-term hold strategy, zero drama, mission-level loyalty to the entrepreneurs we back.</p>
+                        <ul class="diff-list">
+                            <li>Long-term hold strategy, zero drama</li>
+                            <li>Mission-level loyalty to entrepreneurs</li>
+                            <li>Aligned incentives for growth</li>
+                        </ul>
                     </div>
+
+                    <!-- Advisory → PE Flywheel -->
                     <div class="diff-card">
+                        <div class="diff-icon" aria-label="Flywheel arrows icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 4a16 16 0 0116 16M36 20a16 16 0 01-16 16M20 36A16 16 0 014 20M4 20a16 16 0 0116-16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M36 16l-4 4 4 4M4 24l4-4-4-4M24 4l-4 4 4 4M16 36l4-4-4-4" fill="currentColor"/>
+                            </svg>
+                        </div>
                         <h3 class="diff-title">Advisory → PE Flywheel</h3>
-                        <p class="diff-text">Today's advisory profit funds tomorrow's high-conviction control deals.</p>
+                        <ul class="diff-list">
+                            <li>Advisory profit funds control deals</li>
+                            <li>High-conviction investment thesis</li>
+                            <li>Self-sustaining growth engine</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="speed-slash"></div>
         </section>
 
-        <!-- Approach Teaser Section -->
-        <section class="section approach-teaser">
+        <!-- Execution Framework Section -->
+        <section class="section execution-framework" data-scroll-section>
             <div class="container">
                 <h2 class="section-title-center">Execution is our operating system.</h2>
-                <div class="approach-steps">
-                    <div class="step-card">
-                        <div class="step-number">01</div>
+                
+                <!-- Desktop Timeline -->
+                <div class="timeline-horizontal">
+                    <div class="timeline-step" data-step="1">
+                        <div class="step-circle">01</div>
                         <h3 class="step-title">Diagnose</h3>
                         <p class="step-text">Identify critical bottlenecks and untapped leverage points.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">02</div>
+                    
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">→</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-circle">02</div>
                         <h3 class="step-title">Architect</h3>
                         <p class="step-text">Design executable operating models and value streams.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">03</div>
+                    
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">→</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-circle">03</div>
                         <h3 class="step-title">Transform</h3>
                         <p class="step-text">Deploy tactical teams to execute the transformation plan.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">04</div>
+                    
+                    <div class="timeline-connector">
+                        <div class="connector-line"></div>
+                        <div class="connector-arrow">→</div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-circle">04</div>
                         <h3 class="step-title">Scale</h3>
                         <p class="step-text">Lock in gains and build systems for sustainable growth.</p>
                     </div>
                 </div>
+                
+                <!-- Mobile Vertical Timeline -->
+                <div class="timeline-vertical">
+                    <div class="timeline-step" data-step="1">
+                        <div class="step-circle">01</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Diagnose</h3>
+                            <p class="step-text">Identify critical bottlenecks and untapped leverage points.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector-vertical">
+                        <div class="connector-line-vertical"></div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-circle">02</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Architect</h3>
+                            <p class="step-text">Design executable operating models and value streams.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector-vertical">
+                        <div class="connector-line-vertical"></div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-circle">03</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Transform</h3>
+                            <p class="step-text">Deploy tactical teams to execute the transformation plan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector-vertical">
+                        <div class="connector-line-vertical"></div>
+                    </div>
+                    
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-circle">04</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Scale</h3>
+                            <p class="step-text">Lock in gains and build systems for sustainable growth.</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="cta-center">
-                    <a href="/pages/approach.html" class="btn btn-primary">View the Approach</a>
+                    <a href="/pages/approach.html" class="btn-secondary">View the Approach</a>
                 </div>
             </div>
-            <div class="speed-slash"></div>
         </section>
 
-        <!-- PE Strategy / Themes Section -->
-        <section class="section pe-themes">
+        <!-- Investment Focus Section -->
+        <section class="section investment-focus" data-scroll-section>
             <div class="container">
-                <div class="themes-layout">
-                    <div class="themes-intro">
-                        <h2 class="section-title-large">Where we deploy conviction.</h2>
-                        <p class="lead-text">We invest in sectors where operational excellence creates defensible moats and where others hesitate to move.</p>
-                    </div>
-                    <div class="themes-cards">
-                        <div class="theme-card">
-                            <div class="theme-label">Investment Thesis 01</div>
-                            <h3 class="theme-title">Micro Nuclear</h3>
-                            <p class="theme-text">Backing next-generation nuclear energy infrastructure for AI compute and data center expansion.</p>
-                            <a href="/pages/pe-strategy.html" class="theme-link">Learn more</a>
+                <div class="focus-intro">
+                    <h2 class="section-title-large">Where we deploy conviction.</h2>
+                    <p class="lead-text">We invest in sectors where operational excellence creates defensible moats and where others hesitate to move.</p>
+                </div>
+                
+                <div class="accordion-container">
+                    <!-- Micro Nuclear Accordion -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-label">Investment Thesis 01</span>
+                            <h3 class="accordion-title">Micro Nuclear</h3>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">Backing next-generation nuclear energy infrastructure for AI compute and data center expansion.</p>
+                            <ul class="accordion-bullets">
+                                <li>Small modular reactors (SMRs) enabling distributed power</li>
+                                <li>Meeting exponential AI training and inference demands</li>
+                                <li>$50B+ market opportunity by 2030</li>
+                            </ul>
                         </div>
-                        <div class="theme-card">
-                            <div class="theme-label">Investment Thesis 02</div>
-                            <h3 class="theme-title">AI-Enabled Services</h3>
-                            <p class="theme-text">Transforming traditional service businesses through intelligent automation and operational AI.</p>
-                            <a href="/pages/pe-strategy.html" class="theme-link">Learn more</a>
+                    </div>
+                    
+                    <!-- AI-Enabled Services Accordion -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-label">Investment Thesis 02</span>
+                            <h3 class="accordion-title">AI-Enabled Services</h3>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">Transforming traditional service businesses through intelligent automation and operational AI.</p>
+                            <ul class="accordion-bullets">
+                                <li>Automating knowledge work at enterprise scale</li>
+                                <li>40-60% efficiency gains in target verticals</li>
+                                <li>"We believe AI will 10x professional services productivity within 5 years" — Managing Partner</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -148,12 +273,12 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="section cta-section">
+        <section class="section cta-section" data-scroll-section>
             <div class="container">
                 <div class="cta-box">
                     <h2 class="cta-title">Ready to execute?</h2>
                     <p class="cta-text">Let's move. No long sales cycles. No endless discovery calls. Just disciplined execution.</p>
-                    <a href="/pages/contact.html" class="btn btn-primary-lime btn-large">Get Started</a>
+                    <a href="/pages/contact.html" class="btn-primary-cta">Get Started</a>
                 </div>
             </div>
         </section>
@@ -164,7 +289,8 @@
         <!-- Footer will be inserted by JavaScript -->
     </footer>
 
-    <!-- Load Navigation Script -->
+    <!-- Load Scripts -->
     <script src="/navigation.js"></script>
+    <script src="/interactions.js"></script>
 </body>
 </html>

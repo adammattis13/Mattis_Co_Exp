@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadNavigation();
     loadFooter();
     initializeMobileMenu();
-    initializeScrollEffects();
 });
 
 function loadNavigation() {
@@ -54,7 +53,6 @@ function loadNavigation() {
         </div>
     `;
 
-    setActiveNavLink();
     initializeDropdowns();
 }
 
@@ -78,6 +76,7 @@ function loadFooter() {
                     <li><a href="/pages/partners.html">Partners</a></li>
                     <li><a href="/pages/leadership.html">Leadership</a></li>
                     <li><a href="/pages/pe-strategy.html">PE Strategy</a></li>
+                    <li><a href="/pages/memorial.html">Memorial</a></li>
                 </ul>
             </div>
             
@@ -104,14 +103,8 @@ function loadFooter() {
         
         <div class="footer-bottom">
             <p>&copy; ${new Date().getFullYear()} Mattis&Co. All rights reserved.</p>
-            <p>Honoring the memory of 1st Lt. Kevin J. Smith, KIA 8 Dec 2005</p>
         </div>
     `;
-}
-
-function setActiveNavLink() {
-    // Active states disabled - all nav items remain black
-    return;
 }
 
 function initializeDropdowns() {
@@ -132,7 +125,6 @@ function initializeDropdowns() {
         
         dropdown.addEventListener('mouseleave', function() {
             if (window.innerWidth > 768) {
-                // Small delay before closing to allow mouse movement
                 closeTimeout = setTimeout(() => {
                     menu.style.display = 'none';
                 }, 150);
@@ -196,24 +188,5 @@ function initializeMobileMenu() {
             menu.classList.remove('active');
             body.classList.remove('menu-open');
         });
-    });
-}
-
-function initializeScrollEffects() {
-    const header = document.querySelector('header');
-    if (!header) return;
-    
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
     });
 }
