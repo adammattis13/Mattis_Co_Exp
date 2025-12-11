@@ -25,24 +25,17 @@ function loadNavigation() {
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pages/enterprise-strategy.html">Enterprise Strategy</a></li>
-                        <li><a href="/pages/operating-model.html">Operating Model</a></li>
-                        <li><a href="/pages/ai-operations.html">AI Operations</a></li>
-                        <li><a href="/pages/digital-integration.html">Digital Integration</a></li>
+                        <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
+                        <li><a href="/pages/transformation-architecture.html">Transformation Architecture</a></li>
+                        <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
                     </ul>
                 </li>
                 
-                <li><a href="/pages/pe-strategy.html">PE</a></li>
+                <li><a href="/pages/approach.html">Approach</a></li>
                 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">About</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/pages/partners.html">Partners</a></li>
-                        <li><a href="/pages/leadership.html">Leadership</a></li>
-                    </ul>
-                </li>
+                <li><a href="/pages/about.html">About</a></li>
                 
-                <li><a href="/pages/media.html">Media</a></li>
+                <li><a href="/pages/contact.html" class="nav-cta">Contact</a></li>
             </ul>
             
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -66,35 +59,34 @@ function loadFooter() {
                 <div class="footer-logo">
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="footer-logo-image">
                 </div>
-                <p class="footer-tagline">Capital for growth. Clarity for scale. Intelligence for the edge.</p>
-                <p class="footer-subtitle">Operator-led transformation and investment advisory.</p>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="/pages/partners.html">Partners</a></li>
-                    <li><a href="/pages/leadership.html">Leadership</a></li>
-                    <li><a href="/pages/pe-strategy.html">PE Strategy</a></li>
-                    <li><a href="/pages/memorial.html">Memorial</a></li>
-                </ul>
+                <p class="footer-tagline">Operator-led advisory for digital transformation.</p>
+                <p class="footer-subtitle">We help companies build the ecosystems, architectures, and operating models needed to compete in the age of AI.</p>
             </div>
             
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="/pages/enterprise-strategy.html">Enterprise Strategy</a></li>
-                    <li><a href="/pages/operating-model.html">Operating Model</a></li>
-                    <li><a href="/pages/ai-operations.html">AI Operations</a></li>
-                    <li><a href="/pages/digital-integration.html">Digital Integration</a></li>
+                    <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
+                    <li><a href="/pages/transformation-architecture.html">Transformation Architecture</a></li>
+                    <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
+                    <li><a href="/pages/approach.html">Our Approach</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="https://www.linkedin.com/in/adammattis" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="/pages/memorial.html">Memorial</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="/pages/media.html">Media</a></li>
-                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="https://businessagilitynow.com" target="_blank" rel="noopener">Podcast</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
                 </ul>
@@ -127,7 +119,7 @@ function initializeDropdowns() {
             if (window.innerWidth > 768) {
                 closeTimeout = setTimeout(() => {
                     menu.style.display = 'none';
-                }, 150);
+                }, 500);
             }
         });
         
@@ -143,7 +135,7 @@ function initializeDropdowns() {
             if (window.innerWidth > 768) {
                 closeTimeout = setTimeout(() => {
                     menu.style.display = 'none';
-                }, 150);
+                }, 500);
             }
         });
         
