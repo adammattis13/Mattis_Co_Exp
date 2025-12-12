@@ -52,24 +52,10 @@ export default async function handler(req, res) {
             throw new Error('Failed to create person in Pipedrive');
         }
 
-        // Step 2: Create Lead linked to the person
+        // Step 2: Create Lead linked to the person (without note - it's deprecated)
         const leadTitle = company 
             ? `${company} - ${interest || 'Website Inquiry'}` 
             : `${firstName} ${lastName} - ${interest || 'Website Inquiry'}`;
-
-        const leadNote = `
-📋 Contact Form Submission
-
-Company: ${company || 'Not provided'}
-Interest Area: ${interest || 'Not specified'}
-Phone: ${phone || 'Not provided'}
-
-Message:
-${message}
-
----
-Submitted via mattisco.com contact form
-`.trim();
 
         const leadResponse = await fetch(
             `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/leads?api_token=${PIPEDRIVE_API_TOKEN}`,
@@ -83,10 +69,8 @@ Submitted via mattisco.com contact form
                     value: {
                         amount: 0,
                         currency: 'USD'
-                    },
-                    // Optional: Add label for filtering (create labels in Pipedrive first)
-                    // label_ids: ['LABEL_UUID_HERE'],
-                    note: leadNote
+                    }
+                    // Note: 'note' field is deprecated - we'll add notes separately
                 })
             }
         );
@@ -96,6 +80,37 @@ Submitted via mattisco.com contact form
         if (!leadData.success) {
             console.error('Pipedrive Lead Error:', leadData);
             throw new Error('Failed to create lead in Pipedrive');
+        }
+
+        // Step 3: Create Note and attach to the lead (using Notes API)
+        const noteContent = `📋 Contact Form Submission
+
+Company: ${company || 'Not provided'}
+Interest Area: ${interest || 'Not specified'}
+Phone: ${phone || 'Not provided'}
+
+Message:
+${message}
+
+---
+Submitted via mattisco.com contact form`;
+
+        const noteResponse = await fetch(
+            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/notes?api_token=${PIPEDRIVE_API_TOKEN}`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content: noteContent,
+                    lead_id: leadData.data.id,
+                    person_id: personData.data.id
+                })
+            }
+        );
+
+        // Note creation is not critical - log error but don't fail
+        if (!noteResponse.ok) {
+            console.error('Failed to create note, but lead was created successfully');
         }
 
         // Success response
