@@ -26,14 +26,21 @@ function loadNavigation() {
                     <a href="#" class="dropdown-toggle">Services</a>
                     <ul class="dropdown-menu">
                         <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
-                        <li><a href="/pages/transformation-architecture.html">Transformation Architecture</a></li>
+                        <li><a href="/pages/adaptive-architecture.html">Adaptive Architecture</a></li>
                         <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
                     </ul>
                 </li>
                 
                 <li><a href="/pages/approach.html">Approach</a></li>
                 
-                <li><a href="/pages/about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/leadership.html">Leadership</a></li>
+                        <li><a href="/pages/partners.html">Partners</a></li>
+                        <li><a href="/pages/careers.html">Careers</a></li>
+                    </ul>
+                </li>
                 
                 <li><a href="/pages/contact.html" class="nav-cta">Contact</a></li>
             </ul>
@@ -67,7 +74,7 @@ function loadFooter() {
                 <h4>Services</h4>
                 <ul>
                     <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
-                    <li><a href="/pages/transformation-architecture.html">Transformation Architecture</a></li>
+                    <li><a href="/pages/adaptive-architecture.html">Adaptive Architecture</a></li>
                     <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
                     <li><a href="/pages/approach.html">Our Approach</a></li>
                 </ul>
@@ -76,9 +83,11 @@ function loadFooter() {
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/leadership.html">Leadership</a></li>
+                    <li><a href="/pages/partners.html">Partners</a></li>
+                    <li><a href="/pages/careers.html">Careers</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
-                    <li><a href="https://www.linkedin.com/in/adammattis" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/company/mattis-&-company/" target="_blank" rel="noopener">LinkedIn</a></li>
                     <li><a href="/pages/memorial.html">Memorial</a></li>
                 </ul>
             </div>

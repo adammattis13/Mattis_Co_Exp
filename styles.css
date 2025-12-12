@@ -436,14 +436,58 @@ main {
    WHO WE ARE SECTION
    ============================================ */
 .who-we-are {
+    position: relative;
     background: #000000;
+    overflow: hidden;
 }
 
+/* Section Background Image */
+.section-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Section Overlay (40% opacity) */
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* Ensure content appears above background and overlay */
+.who-we-are .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Override body text color in who-we-are section for better contrast */
+.who-we-are .body-text {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.who-we-are .lead-text {
+    color: var(--text-primary);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.who-we-are .section-title {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+
 .two-col-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    display: block;
+    max-width: 900px;
 }
 
 .section-title {
@@ -766,7 +810,25 @@ main {
    CTA SECTION
    ============================================ */
 .cta-section {
+    position: relative;
     background: #000000;
+    overflow: hidden;
+}
+
+/* Ensure CTA content appears above background and overlay */
+.cta-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* CTA text contrast improvements */
+.cta-section .cta-title {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.cta-section .cta-text {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .cta-box {
@@ -785,7 +847,7 @@ main {
 .cta-text {
     font-size: 1.2rem;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
 }
 
