@@ -945,6 +945,269 @@ footer {
 }
 
 /* ============================================
+   MEMORIAL PAGE
+   ============================================ */
+.memorial-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    padding: 8rem 2rem;
+}
+
+.memorial-container {
+    max-width: 600px;
+    text-align: center;
+    animation: memorialFadeIn 1.5s ease-in;
+}
+
+@keyframes memorialFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.memorial-photo-wrapper {
+    margin: 0 auto 3rem;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.memorial-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: var(--transition-slow);
+}
+
+.memorial-photo-wrapper:hover .memorial-photo {
+    filter: grayscale(80%);
+    transform: scale(1.05);
+}
+
+.memorial-name {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.memorial-service {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--lime-accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.memorial-date {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.memorial-text {
+    margin-bottom: 3rem;
+}
+
+.memorial-honor {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.memorial-dedication {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.memorial-link {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--lime-accent);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--lime-accent);
+    border-radius: 4px;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.memorial-link:hover {
+    background: var(--lime-accent);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(186, 218, 85, 0.4);
+}
+
+/* ============================================
+   LEGAL PAGES (TERMS & PRIVACY)
+   ============================================ */
+.legal-content {
+    background: #000000;
+    min-height: 100vh;
+}
+
+.legal-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.legal-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+}
+
+.legal-meta {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-body {
+    color: var(--text-secondary);
+}
+
+.legal-body h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-body h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.legal-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.legal-body .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(186, 218, 85, 0.05);
+    border-left: 3px solid var(--lime-accent);
+    border-radius: 4px;
+}
+
+.legal-body ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.legal-body ul li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 0.875rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.legal-body ul li::before {
+    content: '→';
+    color: var(--lime-accent);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+.legal-body strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+}
+
+.legal-body a {
+    color: var(--lime-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.legal-body a:hover {
+    border-bottom-color: var(--lime-accent);
+}
+
+.contact-info {
+    background: rgba(26, 26, 26, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: var(--lime-accent);
+    font-weight: 500;
+}
+
+.legal-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
@@ -1138,6 +1401,40 @@ footer {
     
     .accordion-title {
         font-size: 1.35rem;
+    }
+    
+    /* Legal Pages Mobile */
+    .legal-wrapper {
+        padding: 3rem 0;
+    }
+    
+    .legal-title {
+        font-size: 2.25rem;
+    }
+    
+    .legal-body h2 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+    }
+    
+    .legal-body h3 {
+        font-size: 1.15rem;
+        margin-top: 2rem;
+    }
+    
+    .legal-body .lead-text {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Memorial Mobile */
+    .memorial-photo-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .memorial-section {
+        padding: 6rem 1.5rem;
     }
 }
 
