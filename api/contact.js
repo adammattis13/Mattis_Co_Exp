@@ -39,8 +39,8 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     name: `${firstName} ${lastName}`,
                     email: [{ value: email, primary: true, label: 'work' }],
-                    phone: phone ? [{ value: phone, primary: true, label: 'work' }] : [],
-                    visible_to: 3 // Visible to entire company
+                    phone: phone ? [{ value: phone, primary: true, label: 'work' }] : []
+                    // Removed visible_to - let Pipedrive use default settings
                 })
             }
         );
@@ -65,12 +65,11 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     title: leadTitle,
                     person_id: personData.data.id,
-                    visible_to: 3, // Visible to entire company
                     value: {
                         amount: 0,
                         currency: 'USD'
                     }
-                    // Note: 'note' field is deprecated - we'll add notes separately
+                    // Removed visible_to - let Pipedrive use default settings
                 })
             }
         );
