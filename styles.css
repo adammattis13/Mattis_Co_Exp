@@ -1492,6 +1492,497 @@ footer {
 }
 
 /* ============================================
+   APPROACH PAGE
+   ============================================ */
+.approach-hero {
+    position: relative;
+    background: #000000;
+    padding: 8rem 0 5rem;
+    text-align: center;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approach-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+.approach-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.approach-hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Service Detail Sections */
+.service-detail {
+    background: #000000;
+    padding: 5rem 0;
+}
+
+.service-detail-alt {
+    background: var(--bg-secondary);
+}
+
+.service-detail-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(186, 218, 85, 0.1);
+    border: 2px solid var(--lime-accent);
+    border-radius: 12px;
+    color: var(--lime-accent);
+}
+
+.service-detail-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.service-detail-content {
+    color: var(--text-secondary);
+}
+
+.service-detail-content .lead-text {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.service-detail-content .body-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.service-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-list {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.service-list li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.service-list li::before {
+    content: '→';
+    color: var(--lime-accent);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.service-cta-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-cta-text a {
+    color: var(--lime-accent);
+    text-decoration: none;
+    border-bottom: 2px solid var(--lime-accent);
+    transition: var(--transition-fast);
+}
+
+.service-cta-text a:hover {
+    color: var(--lime-accent-dark);
+    border-bottom-color: var(--lime-accent-dark);
+}
+
+/* Approach Page Responsive */
+@media (max-width: 768px) {
+    .approach-hero {
+        padding: 5rem 0 3rem;
+        min-height: 50vh;
+    }
+    
+    .service-detail {
+        padding: 3rem 0;
+    }
+    
+    .service-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+    }
+    
+    .service-detail-title {
+        font-size: 1.75rem;
+    }
+    
+    .service-subtitle {
+        font-size: 1.15rem;
+        margin-top: 2rem;
+    }
+}
+
+/* ============================================
+   SERVICE PAGES
+   ============================================ */
+.service-page-hero {
+    position: relative;
+    background: #000000;
+    padding: 10rem 0 6rem;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-overlay-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.service-hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-hero-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(186, 218, 85, 0.15);
+    border: 3px solid var(--lime-accent);
+    border-radius: 16px;
+    color: var(--lime-accent);
+}
+
+.service-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.service-hero-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Service Content */
+.service-content {
+    background: #000000;
+    padding: 6rem 0;
+}
+
+.service-content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-intro {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.service-content .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--text-primary);
+    margin: 4rem 0 3rem;
+}
+
+/* Deliverables Grid */
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.deliverable-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.deliverable-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--lime-accent);
+    box-shadow: var(--shadow-hover);
+}
+
+.deliverable-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--lime-accent);
+    margin-bottom: 0.75rem;
+}
+
+.deliverable-card .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+/* Service Outcomes */
+.service-outcomes {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(186, 218, 85, 0.05);
+    border-left: 4px solid var(--lime-accent);
+    border-radius: var(--radius-sm);
+}
+
+/* Service Proof Section */
+.service-proof {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 4rem 0 0;
+    background: var(--card-bg);
+    border: 2px solid var(--lime-accent);
+    border-radius: var(--radius-lg);
+}
+
+.proof-stat {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    color: var(--lime-accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.proof-label {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.proof-statement {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Service Page Responsive */
+@media (max-width: 768px) {
+    .service-page-hero {
+        padding: 6rem 0 4rem;
+        min-height: 60vh;
+    }
+    
+    .service-hero-icon {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-content {
+        padding: 4rem 0;
+    }
+    
+    .service-intro {
+        font-size: 1.25rem;
+    }
+    
+    .deliverables-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-proof {
+        padding: 3rem 1.5rem;
+    }
+    
+    .proof-stat {
+        font-size: 2.5rem;
+    }
+    
+    .proof-statement {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   PLACEHOLDER PAGES
+   ============================================ */
+.placeholder-hero {
+    background: #000000;
+    padding: 10rem 0 5rem;
+    text-align: center;
+}
+
+.placeholder-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+}
+
+.placeholder-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.placeholder-content {
+    background: #000000;
+    padding: 4rem 0 8rem;
+}
+
+.placeholder-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+}
+
+.placeholder-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(186, 218, 85, 0.1);
+    border: 2px solid var(--lime-accent);
+    border-radius: 50%;
+    color: var(--lime-accent);
+}
+
+.placeholder-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.placeholder-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+/* Placeholder Page Responsive */
+@media (max-width: 768px) {
+    .placeholder-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .placeholder-content {
+        padding: 2rem 0 5rem;
+    }
+    
+    .placeholder-wrapper {
+        padding: 3rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .placeholder-icon {
+        width: 72px;
+        height: 72px;
+    }
+    
+    .placeholder-heading {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
    CONTACT PAGE
    ============================================ */
 .contact-hero {
