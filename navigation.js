@@ -95,7 +95,7 @@ function loadFooter() {
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="https://businessagilitynow.com" target="_blank" rel="noopener">Podcast</a></li>
+                    <li><a href="https://theadammattisshow.com" target="_blank" rel="noopener">Podcast</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
                 </ul>
