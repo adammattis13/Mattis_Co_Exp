@@ -1,0 +1,16 @@
+# Mattis&Co Robots.txt
+# https://mattisco.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mattisco.com/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1
+
+# Block admin/system paths (none currently, but good practice)
+# Disallow: /admin/
+# Disallow: /api/
