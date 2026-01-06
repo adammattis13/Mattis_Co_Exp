@@ -66,8 +66,8 @@ function loadFooter() {
                 <div class="footer-logo">
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="footer-logo-image">
                 </div>
-                <p class="footer-tagline">Operator-led advisory for digital transformation.</p>
-                <p class="footer-subtitle">We help companies build the ecosystems, architectures, and operating models needed to compete in the age of AI.</p>
+                <p class="footer-tagline">Strategic clarity for the AI shift.</p>
+                <p class="footer-subtitle">Operator-led advisory for companies building ecosystems, architectures, and operating models.</p>
             </div>
             
             <div class="footer-column">
