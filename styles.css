@@ -2885,3 +2885,110 @@ footer {
         height: 10px;
     }
 }
+
+/* ============================================
+   PARTNERS PAGE
+   ============================================ */
+.partners-content {
+    background: #000000;
+    padding: 4rem 0 8rem;
+}
+
+.partners-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partner-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.partner-card:hover {
+    border-color: rgba(186, 218, 85, 0.3);
+}
+
+.partner-badge {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.partner-logo {
+    width: 120px;
+    height: auto;
+    border-radius: var(--radius-sm);
+}
+
+.partner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.partner-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.partner-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.partner-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.partner-benefits li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.partner-benefits li::before {
+    content: '✓';
+    color: var(--lime-accent);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+/* Partners Page Responsive */
+@media (max-width: 768px) {
+    .partner-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    
+    .partner-badge {
+        justify-content: flex-start;
+    }
+    
+    .partner-logo {
+        width: 100px;
+    }
+    
+    .partner-title {
+        font-size: 1.25rem;
+    }
+}
