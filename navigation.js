@@ -67,7 +67,7 @@ function loadFooter() {
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="footer-logo-image">
                 </div>
                 <p class="footer-tagline">Strategic clarity for the AI shift.</p>
-                <p class="footer-subtitle">Operator-led advisory for companies building ecosystems, architectures, and operating models.</p>
+                <p class="footer-subtitle">We help companies—from growth-stage to Fortune 500—build the ecosystems, architectures, and operating models to compete in the age of AI.</p>
             </div>
             
             <div class="footer-column">
@@ -95,7 +95,7 @@ function loadFooter() {
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="https://theadammattisshow.com" target="_blank" rel="noopener">Podcast</a></li>
+                    <li><a href="https://businessagilitynow.com" target="_blank" rel="noopener">Podcast</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
                 </ul>
