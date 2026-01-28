@@ -23,21 +23,24 @@ function loadNavigation() {
                 <li><a href="/index.html">Home</a></li>
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Services</a>
+                    <a href="#" class="dropdown-toggle">Practices</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
-                        <li><a href="/pages/adaptive-architecture.html">Adaptive Architecture</a></li>
-                        <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
+                        <li><a href="/pages/practices/strategy-growth.html">Strategy & Growth</a></li>
+                        <li><a href="/pages/practices/operating-model.html">Operating Model Design</a></li>
+                        <li><a href="/pages/practices/digital-ai.html">Digital & AI Strategy</a></li>
+                        <li><a href="/pages/practices/transformation.html">Transformation & Change</a></li>
                     </ul>
                 </li>
                 
                 <li><a href="/pages/approach.html">Approach</a></li>
                 
+                <li><a href="/pages/perspectives.html">Perspectives</a></li>
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">About</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/pages/leadership.html">Leadership</a></li>
                         <li><a href="/pages/partners.html">Partners</a></li>
+                        <li><a href="/pages/events.html">Events</a></li>
                         <li><a href="/pages/careers.html">Careers</a></li>
                     </ul>
                 </li>
@@ -66,36 +69,37 @@ function loadFooter() {
                 <div class="footer-logo">
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="footer-logo-image">
                 </div>
-                <p class="footer-tagline">Operator-led advisory for digital transformation.</p>
-                <p class="footer-subtitle">We help companies build the ecosystems, architectures, and operating models needed to compete in the age of AI.</p>
+                <p class="footer-tagline">Strategic clarity for what's next.</p>
+                <p class="footer-subtitle">Boutique strategy consultancy for executives navigating change.</p>
             </div>
             
             <div class="footer-column">
-                <h4>Services</h4>
+                <h4>Practices</h4>
                 <ul>
-                    <li><a href="/pages/ecosystem-strategy.html">Ecosystem Strategy</a></li>
-                    <li><a href="/pages/adaptive-architecture.html">Adaptive Architecture</a></li>
-                    <li><a href="/pages/ai-operating-model.html">AI Operating Model</a></li>
-                    <li><a href="/pages/approach.html">Our Approach</a></li>
+                    <li><a href="/pages/practices/strategy-growth.html">Strategy & Growth</a></li>
+                    <li><a href="/pages/practices/operating-model.html">Operating Model Design</a></li>
+                    <li><a href="/pages/practices/digital-ai.html">Digital & AI Strategy</a></li>
+                    <li><a href="/pages/practices/transformation.html">Transformation & Change</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="/pages/leadership.html">Leadership</a></li>
                     <li><a href="/pages/partners.html">Partners</a></li>
+                    <li><a href="/pages/events.html">Events</a></li>
+                    <li><a href="/pages/case-studies.html">Case Studies</a></li>
                     <li><a href="/pages/careers.html">Careers</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
-                    <li><a href="https://www.linkedin.com/company/mattis-&-company/" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <li><a href="/pages/memorial.html">Memorial</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
+                    <li><a href="/pages/perspectives.html">Perspectives</a></li>
                     <li><a href="https://www.theadammattisshow.com/" target="_blank" rel="noopener">Podcast</a></li>
+                    <li><a href="https://www.linkedin.com/company/mattis-&-company/" target="_blank" rel="noopener">LinkedIn</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
                 </ul>
