@@ -5,19 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perspectives | Mattis&Co</title>
     <meta name="description" content="Strategic insights on transformation, operating models, AI strategy, and leadership from Mattis&Co.">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Perspectives Page Styles */
+        .perspectives-page-header {
+            padding: 160px 0 80px;
+            background: var(--bg-primary);
+        }
+        
+        .page-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 700px;
+        }
+        
+        /* Featured Article */
+        .perspectives-featured {
+            padding-top: 0;
+        }
+        
+        .featured-article {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-base);
+        }
+        
+        .featured-article:hover {
+            border-color: var(--lime-accent);
+        }
+        
+        .featured-article-link {
+            display: block;
+            padding: 3rem;
+            text-decoration: none;
+        }
+        
+        .featured-label {
+            display: inline-block;
+            background: var(--lime-accent);
+            color: var(--bg-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .perspective-category {
+            display: inline-block;
+            color: var(--lime-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            margin-left: 0.75rem;
+        }
+        
+        .featured-article-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .featured-article-excerpt {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+        
+        .featured-article-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .perspective-author {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        /* Article Grid */
+        .perspectives-grid-section {
+            padding-top: 2rem;
+        }
+        
+        .perspectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .perspective-card {
+            background: rgba(26, 26, 26, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            transition: var(--transition-base);
+            overflow: hidden;
+        }
+        
+        .perspective-card:hover {
+            border-color: var(--lime-accent);
+            transform: translateY(-4px);
+        }
+        
+        .perspective-card a {
+            display: block;
+            padding: 2rem;
+            text-decoration: none;
+        }
+        
+        .perspective-card .perspective-category {
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .perspective-title {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .perspective-excerpt {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+        }
+        
+        .perspective-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        
+        /* Newsletter CTA */
+        .perspectives-cta {
+            background: var(--bg-secondary);
+        }
+        
+        .perspectives-cta-box {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .perspectives-cta-title {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .perspectives-cta-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .perspectives-page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .featured-article-link {
+                padding: 2rem;
+            }
+            
+            .featured-article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .perspectives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="sticky-nav"><nav class="main-nav"></nav></header>
+    <!-- Sticky Navigation -->
+    <header class="sticky-nav">
+        <nav class="main-nav">
+            <!-- Navigation will be inserted by JavaScript -->
+        </nav>
+    </header>
 
+    <!-- Main Content -->
     <main>
-        <section class="practice-hero-full" data-scroll-section>
-            <img src="/assets/peabody.png" alt="" class="section-bg-image">
-            <div class="section-overlay"></div>
+        <!-- Page Header -->
+        <section class="page-header perspectives-page-header" data-scroll-section>
             <div class="container">
                 <h1 class="page-title">Perspectives</h1>
                 <p class="page-subtitle">Original thinking on strategy, transformation, and the future of enterprise operations. Not content marketing—actual points of view.</p>
@@ -28,15 +231,16 @@
         <section class="section perspectives-featured" data-scroll-section>
             <div class="container">
                 <article class="featured-article">
-                    <a href="/pages/perspectives/ai-magnifies-dysfunction.html" class="featured-article-link">
+                    <a href="/pages/perspectives/agentic-teams-whitepaper.html" class="featured-article-link">
                         <div class="featured-article-content">
+                            <span class="featured-label">New Whitepaper</span>
                             <span class="perspective-category">Digital & AI Strategy</span>
-                            <h2 class="featured-article-title">Why AI Magnifies Dysfunction</h2>
-                            <p class="featured-article-excerpt">The sugar-high of the AI rush is fading. The sobering reality: you can't AI your way to efficiency. Without changing how you organize around value, streamline delivery, and embed technology into the flow of work, AI simply turbocharges broken workflows.</p>
+                            <h2 class="featured-article-title">Augmenting Your Dev Org with Agentic Teams</h2>
+                            <p class="featured-article-excerpt">A 2025 METR study found that experienced developers using AI coding tools actually took 19% longer to complete tasks, while believing they were 20% faster. The gap reveals something important: agentic AI isn't a plug-and-play productivity boost. It's a fundamentally different way of working that requires deliberate adoption.</p>
                             <div class="featured-article-meta">
                                 <span class="perspective-author">Adam Mattis</span>
-                                <span class="perspective-date">January 2025</span>
-                                <span class="perspective-read-time">7 min read</span>
+                                <span>February 2025</span>
+                                <span>12 min read</span>
                             </div>
                         </div>
                     </a>
@@ -47,79 +251,86 @@
         <!-- Article Grid -->
         <section class="section perspectives-grid-section" data-scroll-section>
             <div class="container">
-                <div class="perspectives-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="digital-ai">Digital & AI</button>
-                    <button class="filter-btn" data-filter="transformation">Transformation</button>
-                    <button class="filter-btn" data-filter="operating-model">Operating Models</button>
-                    <button class="filter-btn" data-filter="leadership">Leadership</button>
-                </div>
-                
-                <div class="perspectives-grid perspectives-grid-full">
+                <div class="perspectives-grid">
+                    
                     <!-- Article 1 -->
-                    <article class="perspective-card" data-category="transformation">
-                        <a href="/pages/perspectives/cultural-intelligence.html">
-                            <span class="perspective-category">Transformation & Change</span>
-                            <h3 class="perspective-title">Cultural Intelligence in Global Transformation</h3>
-                            <p class="perspective-excerpt">Clear, direct communication can move mountains—or break trust. What works in New York fails in Tokyo. A lesson in cultural intelligence learned the hard way.</p>
+                    <article class="perspective-card" data-category="ai">
+                        <a href="/pages/perspectives/ai-magnifies-dysfunction.html">
+                            <span class="perspective-category">Digital & AI Strategy</span>
+                            <h3 class="perspective-title">Why AI Magnifies Dysfunction</h3>
+                            <p class="perspective-excerpt">The sugar-high of the AI rush is fading. The sobering reality: you can't AI your way to efficiency. Most organizations solve the wrong problem, building impressive demos that never scale.</p>
                             <div class="perspective-meta">
-                                <span class="perspective-date">January 2025</span>
-                                <span class="perspective-read-time">5 min read</span>
+                                <span>January 2025</span>
+                                <span>6 min read</span>
                             </div>
                         </a>
                     </article>
                     
                     <!-- Article 2 -->
-                    <article class="perspective-card" data-category="operating-model">
-                        <a href="/pages/perspectives/operating-model-debt.html">
-                            <span class="perspective-category">Operating Model Design</span>
-                            <h3 class="perspective-title">The Hidden Cost of Organizational Debt</h3>
-                            <p class="perspective-excerpt">Technical debt gets all the attention. But organizational debt—the accumulation of structural compromises—is what kills transformation momentum.</p>
+                    <article class="perspective-card" data-category="operating-models">
+                        <a href="/pages/perspectives/agentic-ai.html">
+                            <span class="perspective-category">Operating Models</span>
+                            <h3 class="perspective-title">Operating Models for Agentic AI: What We're Seeing</h3>
+                            <p class="perspective-excerpt">Agentic systems require fundamentally different governance than traditional AI. Here's how leading organizations are adapting their operating models for autonomous decision-making.</p>
                             <div class="perspective-meta">
-                                <span class="perspective-date">January 2025</span>
-                                <span class="perspective-read-time">6 min read</span>
+                                <span>January 2025</span>
+                                <span>10 min read</span>
                             </div>
                         </a>
                     </article>
                     
                     <!-- Article 3 -->
-                    <article class="perspective-card" data-category="leadership">
-                        <a href="/pages/perspectives/partnerships.html">
-                            <span class="perspective-category">Leadership</span>
-                            <h3 class="perspective-title">The Power of Partnerships</h3>
-                            <p class="perspective-excerpt">From BMX tracks to boardrooms, from combat zones to corporate strategy—every stage of a career can be shaped by partnerships. Here's what three decades taught me.</p>
+                    <article class="perspective-card" data-category="ecosystem">
+                        <a href="/pages/perspectives/partner-activation.html">
+                            <span class="perspective-category">Ecosystem Strategy</span>
+                            <h3 class="perspective-title">The 90-Day Partner Activation Framework</h3>
+                            <p class="perspective-excerpt">Most partner programs fail not because of bad strategy, but because of slow activation. Here's the framework we use to get partners generating pipeline in 90 days.</p>
                             <div class="perspective-meta">
-                                <span class="perspective-date">December 2024</span>
-                                <span class="perspective-read-time">8 min read</span>
+                                <span>December 2024</span>
+                                <span>7 min read</span>
                             </div>
                         </a>
                     </article>
                     
                     <!-- Article 4 -->
-                    <article class="perspective-card" data-category="transformation">
-                        <a href="/pages/perspectives/change-as-capability.html">
-                            <span class="perspective-category">Transformation & Change</span>
-                            <h3 class="perspective-title">What Leaders Get Wrong About Large-Scale Change</h3>
-                            <p class="perspective-excerpt">The biggest transformation failures share a common thread: they treat change as a project, not a capability. Here's the difference—and why it matters.</p>
+                    <article class="perspective-card" data-category="ai">
+                        <a href="/pages/perspectives/ai-governance.html">
+                            <span class="perspective-category">AI Strategy</span>
+                            <h3 class="perspective-title">AI Governance Without the Bureaucracy</h3>
+                            <p class="perspective-excerpt">Governance doesn't have to mean slow. The best AI governance frameworks we've seen enable speed while managing risk. Here's how they work.</p>
                             <div class="perspective-meta">
-                                <span class="perspective-date">December 2024</span>
-                                <span class="perspective-read-time">6 min read</span>
+                                <span>December 2024</span>
+                                <span>5 min read</span>
                             </div>
                         </a>
                     </article>
                     
                     <!-- Article 5 -->
-                    <article class="perspective-card" data-category="digital-ai">
-                        <a href="/pages/perspectives/ai-governance.html">
-                            <span class="perspective-category">Digital & AI Strategy</span>
-                            <h3 class="perspective-title">AI Governance Without the Bureaucracy</h3>
-                            <p class="perspective-excerpt">Governance doesn't have to mean slow. The best AI governance frameworks enable speed while managing risk. Here's how they work.</p>
+                    <article class="perspective-card" data-category="leadership">
+                        <a href="/pages/perspectives/change-as-capability.html">
+                            <span class="perspective-category">Transformation & Change</span>
+                            <h3 class="perspective-title">What Leaders Get Wrong About Large-Scale Change</h3>
+                            <p class="perspective-excerpt">The biggest transformation failures share a common thread: they treat change as a project, not a capability. Here's the difference.</p>
                             <div class="perspective-meta">
-                                <span class="perspective-date">November 2024</span>
-                                <span class="perspective-read-time">5 min read</span>
+                                <span>November 2024</span>
+                                <span>6 min read</span>
                             </div>
                         </a>
                     </article>
+                    
+                    <!-- Article 6 -->
+                    <article class="perspective-card" data-category="ecosystem">
+                        <a href="/pages/perspectives/partnerships.html">
+                            <span class="perspective-category">Ecosystem Strategy</span>
+                            <h3 class="perspective-title">Why Partnerships Are Built on Trust</h3>
+                            <p class="perspective-excerpt">The best partnerships make everyone better. If a partnership isn't creating mutual value, it isn't really a partnership—it's extraction with extra steps.</p>
+                            <div class="perspective-meta">
+                                <span>November 2024</span>
+                                <span>8 min read</span>
+                            </div>
+                        </a>
+                    </article>
+                    
                 </div>
             </div>
         </section>
@@ -129,37 +340,20 @@
             <div class="container">
                 <div class="perspectives-cta-box">
                     <h2 class="perspectives-cta-title">Get notified when we publish</h2>
-                    <p class="perspectives-cta-text">We publish infrequently but substantively. No spam, no fluff—just strategic thinking worth your time.</p>
-                    <a href="/pages/contact.html" class="btn-secondary">Subscribe to Updates</a>
+                    <p class="perspectives-cta-text">We publish infrequently but substantively. No spam, no fluff.</p>
+                    <a href="/pages/contact.html" class="btn-primary-cta">Stay Connected</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer></footer>
+    <!-- Footer -->
+    <footer>
+        <!-- Footer will be inserted by JavaScript -->
+    </footer>
+
+    <!-- Load Scripts -->
     <script src="/navigation.js"></script>
     <script src="/interactions.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articles = document.querySelectorAll('.perspectives-grid-full .perspective-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const filter = this.dataset.filter;
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    articles.forEach(article => {
-                        if (filter === 'all' || article.dataset.category === filter) {
-                            article.style.display = 'block';
-                        } else {
-                            article.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

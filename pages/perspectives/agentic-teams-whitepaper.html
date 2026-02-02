@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmenting Your Dev Org with Agentic Teams | Mattis&Co</title>
+    <meta name="description" content="A practical guide to adopting agentic AI in software development. What works, what breaks, and the lessons learned so you don't have to.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Article Page Styles */
+        .article-page {
+            background: #000000;
+            min-height: 100vh;
+        }
+        
+        .article-header-section {
+            padding: 160px 0 60px;
+            background: #000000;
+        }
+        
+        .article-back-link {
+            display: inline-block;
+            color: #A1A1A1;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+        
+        .article-back-link:hover {
+            color: #BADA55;
+        }
+        
+        .article-category {
+            display: inline-block;
+            color: #BADA55;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        
+        .article-subtitle {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: #A1A1A1;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: #A1A1A1;
+            font-size: 0.95rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-author {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+        
+        /* Article Body */
+        .article-body-section {
+            padding: 4rem 0 6rem;
+            background: #000000;
+        }
+        
+        .article-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        
+        .article-content h2 {
+            font-size: 1.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        
+        .article-content h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: #A1A1A1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: #A1A1A1;
+            margin-bottom: 0.75rem;
+        }
+        
+        .article-content strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        /* Images */
+        .article-image {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-image-caption {
+            font-size: 0.9rem;
+            color: #A1A1A1;
+            margin-top: 0.75rem;
+            opacity: 0.8;
+        }
+        
+        /* Pullquote */
+        .pullquote {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: #BADA55;
+            font-weight: 500;
+            margin: 2.5rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: #A1A1A1;
+            opacity: 0.5;
+            letter-spacing: 0.5em;
+        }
+        
+        /* Author Bio */
+        .author-bio {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.5);
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+        
+        .author-bio-text h4 {
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .author-bio-text p {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .author-bio-text a {
+            color: #BADA55;
+            text-decoration: none;
+        }
+        
+        .author-bio-text a:hover {
+            text-decoration: underline;
+        }
+        
+        /* CTA Box */
+        .article-cta-box {
+            background: rgba(186, 218, 85, 0.08);
+            border: 1px solid rgba(186, 218, 85, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .article-cta-box h3 {
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+            font-size: 1.35rem;
+        }
+        
+        .article-cta-box p {
+            color: #A1A1A1;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .article-header-section {
+                padding: 120px 0 40px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .author-bio {
+                flex-direction: column;
+            }
+            
+            .pullquote {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <header class="sticky-nav">
+        <nav class="main-nav">
+            <!-- Navigation will be inserted by JavaScript -->
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <article class="article-page">
+            <!-- Article Header -->
+            <div class="article-header-section">
+                <div class="container">
+                    <a href="/pages/perspectives.html" class="article-back-link">← Back to Perspectives</a>
+                    <span class="article-category">Whitepaper</span>
+                    <h1 class="article-title">Augmenting Your Dev Org with Agentic Teams</h1>
+                    <p class="article-subtitle">A 2025 METR study found that experienced developers using AI coding tools actually took 19% longer to complete tasks, while believing they were 20% faster. The gap reveals something important: agentic AI isn't a plug-and-play productivity boost. It's a fundamentally different way of working that requires deliberate adoption.</p>
+                    <div class="article-meta">
+                        <span class="article-author">Adam Mattis</span>
+                        <span>February 2025</span>
+                        <span>12 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Body -->
+            <div class="article-body-section">
+                <div class="container">
+                    <div class="article-content">
+                        
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/01_hero_image.png" alt="Augmenting Your Dev Org with Agentic Teams">
+                        </div>
+
+                        <p>Since ServiceNow Knowledge 25, I have been experimenting with agentic AI both on my own and with clients. What follows is what I've found to work, what I've broken, and the lessons I've learned so you don't have to.</p>
+
+                        <h2>The Opportunity</h2>
+                        
+                        <p>By late 2025, industry surveys suggested 80-90% of developers were using AI tools in some capacity. But most are still on autocomplete. Agentic tools—systems that reason, plan, execute multi-step changes, and iterate on their own—are an entirely different animal.</p>
+                        
+                        <p>The real win isn't raw speed. It's the speed at which a team can experiment and innovate. Complex refactors that used to eat an iteration. Migrations that would've taken months. Architectural changes that were "too risky" because nobody had time. Agentic tools make these manageable.</p>
+                        
+                        <p>Early adopters report release cycles speeding up 50-60% in some cases. Fewer bugs because agents enforce standards automatically. For a growing org, this means scaling without ballooning headcount. Your senior team punches above their weight. Agents handle CRUD apps, simple tools, and API glue code at dramatically lower labor costs than a decade ago. Some teams report saving 6-15 hours per developer per week. For a 50-person team, that's meaningful.</p>
+                        
+                        <p>But remember: when you automate a broken system, you're only perpetuating the pain inherent in that system. The productivity gains are real, but only when the workflow is dialed in first.</p>
+
+                        <h2>For the Executive</h2>
+                        
+                        <p>If you're in the C-suite, here's the framing that matters: agentic teams should augment your organization to speed innovation and time-to-value. They should not replace actual humans.</p>
+                        
+                        <p>The companies getting this wrong are using AI headcount math: "If agents can do 30% of the work, we need 30% fewer developers." That's a mistake. The companies getting it right are using AI leverage math: "If agents handle the repetitive work, our developers can ship features that were previously out of reach."</p>
+                        
+                        <p>Junior devs (yes, we still need junior devs) onboard faster with AI as a supervisor. Automated deployments minimize downtime. Predictive maintenance catches issues before production. The outcome you should expect: more predictable quality, fewer post-release fires, lower maintenance bills, and a team that can take on more ambitious projects.</p>
+                        
+                        <p class="pullquote">The question to ask your CTO isn't "how many heads can we cut?" It's "what could we build that we couldn't before?"</p>
+
+                        <h2>The Human Element</h2>
+                        
+                        <p>The biggest challenge to agentic AI adoption, same as with any change, is people. Specifically, the fear of being replaced.</p>
+                        
+                        <p>Your senior developers have spent years building expertise. When you introduce a tool that can "write code," their first thought isn't "great, I'll be more productive." It's "am I about to be automated out of a job?" That fear is rational, and ignoring it guarantees failed adoption.</p>
+                        
+                        <p>The only solution is trust, and trust is built over time. This isn't a technology rollout; it's a change management exercise. Kotter's framework applies: create urgency around the opportunity (not the threat), build a coalition of early adopters who can demonstrate success, communicate relentlessly that the goal is augmentation not replacement, and generate visible short-term wins that benefit the team.</p>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/06_human_element.png" alt="Trust Over Time - Developer and AI collaboration">
+                            <p class="article-image-caption">Trust is built incrementally through consistent positive experiences</p>
+                        </div>
+                        
+                        <p>The teams that succeed are the ones where developers see agents as tools that make their work better, not threats that make their work disappear.</p>
+
+                        <h2>How to Think About Tools</h2>
+                        
+                        <p>The market has split into two categories: IDE-first copilots that augment your editor line by line, and agentic systems that plan and execute multi-step changes with human checkpoints. Different problems, different tools.</p>
+                        
+                        <p>The decision framework is simple. For daily flow (small tasks, quick completions, staying in the editor), you want a copilot like Cursor or GitHub Copilot. For complex work (large refactors, multi-file changes, architectural migrations), you want an agentic tool like Claude Code that can read your entire repo and execute a plan across dozens of files.</p>
+                        
+                        <p>Don't standardize on one tool. Smart teams use different tools for different jobs. The pattern I'm seeing work: Copilot for daily flow and PRs, Claude Code for planned refactors and migrations, Cursor for deep codebase work.</p>
+                        
+                        <p>If your organization has strict data privacy requirements (fintech, healthcare, defense), tools like Tabnine offer air-gapped deployment. If you want agentic capabilities baked into CI/CD, GitLab AI and Apiiro are worth evaluating. If you have non-developers drowning in requests for simple automations, Claude Cowork (research preview, requires Claude Max subscription) can offload that demand to business teams directly.</p>
+                        
+                        <p><strong>Don't chase features.</strong> Switching tools every month means you never build muscle memory or prompt engineering skills. Each switch resets your learning curve. Commit to one tool for 60-90 days. Learn its patterns. Evaluate alternatives after you're proficient.</p>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/03_tool_comparison.png" alt="AI Coding Tools Quick Reference">
+                            <p class="article-image-caption">Quick reference: matching tools to use cases</p>
+                        </div>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/04_agentic_workflow.png" alt="Human-in-the-Loop workflow diagram">
+                            <p class="article-image-caption">The human-in-the-loop agentic workflow</p>
+                        </div>
+
+                        <h2>Security</h2>
+                        
+                        <p>This is where orgs get it wrong. They treat agentic AI like another dev tool when it's actually a new attack surface. Generative AI creates content. Agentic AI executes commands. Different beast.</p>
+                        
+                        <p>Compromised agents mean data leaks or malicious behavior. Dependency risks are huge: outdated libraries, unvetted code.</p>
+                        
+                        <p>The threat landscape includes prompt injection (adversaries force agents to execute malicious commands), cross-agent privilege escalation (low-privilege agents manipulated to trick high-privilege agents), non-human identity compromise (hardcoded API keys giving attackers months of access), and MCP server vulnerabilities (shadow agents linking LLMs to corporate databases without oversight).</p>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/05_security_visual.png" alt="Zero Trust for Agents">
+                            <p class="article-image-caption">Zero Trust principles applied to agentic systems</p>
+                        </div>
+                        
+                        <p><strong>Mitigation:</strong> Zero Trust for Agents. Every tool call and API request verified, logged, scoped. Think of agents as digital insiders. They can cause harm unintentionally or deliberately if compromised. Establish governance: ownership, monitoring tied to KPIs, escalation triggers, accountability standards. Treat LLM-generated code as untrusted. Sandbox everything. Enforce pre-commit hooks, automated scans. Least-privilege, no blanket access.</p>
+
+                        <h2>Code Quality and Maintainability</h2>
+                        
+                        <p>AI-generated code quality varies wildly. Some companies see huge gains, others see nothing. The difference is process discipline.</p>
+                        
+                        <p>The "vibe coding" backlash is real. There's an "AI slop" crisis in production codebases. One researcher documented a junior engineer merging 1,000 lines of AI-generated code that broke a test environment. So convoluted that rewriting from scratch was faster than debugging.</p>
+                        
+                        <p><strong>Treat AI code like contractor code.</strong> Review it like it came from someone who doesn't know your codebase. AI generates plausible code. It doesn't understand why your team made specific architectural decisions.</p>
+                        
+                        <p><strong>Automate testing.</strong> Non-negotiable. The tools can run tests and iterate. Claude Code can run your test suite and fix failures before presenting code for review.</p>
+                        
+                        <p><strong>Don't skip planning.</strong> Make the agent generate an architectural plan. Review it before code gets written. Catches misunderstandings before they become debt.</p>
+                        
+                        <p><strong>Watch for over-engineering.</strong> Agents go too far. One team reported Claude building a database-backed session management system when JWTs would've sufficed. Review for simplicity, not just correctness.</p>
+                        
+                        <p>Studies suggest agent-generated code can spike complexity significantly and increase static warnings. Documentation matters more than ever. Humans carry mental context about why decisions were made. AI doesn't. Require inline documentation explaining the reasoning, not just the what.</p>
+
+                        <h2>A Framework for Scaling</h2>
+                        
+                        <p>Once you move past pilots into production agentic systems, you need structure. A three-layer framework helps:</p>
+                        
+                        <p><strong>Layer 1: Model Routing (The Traffic Cop).</strong> Not every query needs your most expensive model. Route simple questions to fast, cheap models; route complex reasoning to powerful ones. This is how you control costs while maintaining quality. Without routing, you're either overpaying or getting bad results.</p>
+                        
+                        <p><strong>Layer 2: Agent Orchestration (The Team Manager).</strong> Some tasks are too big for one agent. Orchestration breaks them down, assigns parts to specialized agents, and combines the results. One agent searches, another calculates, a third summarizes. The orchestrator keeps it cohesive. This is how you handle complex, multi-step problems.</p>
+                        
+                        <p><strong>Layer 3: Context Patterns (Memory and Flow).</strong> Agents forget. Context patterns are reusable templates for handling memory, conversation history, and reasoning flow. Chain-of-thought prompting. Memory buffers for key facts. Structured inputs that guide better outputs. This is how you make the system feel coherent over time instead of starting fresh every interaction.</p>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/02_three_layer_framework.png" alt="Model Routing, Agent Orchestration, Context Patterns">
+                            <p class="article-image-caption">The three-layer framework for scaling agentic systems</p>
+                        </div>
+                        
+                        <p>The layers stack: routing picks the right tools, orchestration assembles them into a team, context patterns make the whole thing coherent. Teams using this framework report 60-80% reduction in refactoring time.</p>
+
+                        <h2>The Real Costs</h2>
+                        
+                        <p>Your API bill is 10-20% of your real AI costs. I learned this the hard way. Engineering hours on prompt optimization. Infrastructure for scaling. Security compliance reviews. Monitoring stacks. That "reasonable" API bill? Total business impact was 5-10x higher.</p>
+                        
+                        <p><strong>The cost iceberg:</strong> Your 200-token demo becomes a 1,200-token production interaction once you add conversation history, user profiles, and system state. Demo failures become complex recovery workflows. Your token math assumes perfect inputs; production assumes everything breaks. Your systems weren't built for AI, and AI wasn't built for your systems. "Simple" integrations turn into building APIs that don't exist.</p>
+                        
+                        <p><strong>Subscription tools</strong> (Copilot, Cursor, Windsurf) run $10-40/seat/mo. Predictable. <strong>API tools</strong> spiral fast: an agent on complex tasks can consume 5-10M tokens monthly, costing $45-150/mo for Sonnet on a single workflow. Multiply across a team.</p>
+                        
+                        <p><strong>Optimization strategies:</strong> Smart prompting cuts token usage 43%. Model routing (cheap models for simple tasks) saves 85%. Caching reduces redundant calls. Open-source frameworks (LangChain, LlamaIndex) save 75% vs proprietary but need more expertise.</p>
+                        
+                        <p>For 10-20 developers, budget $200-800/dev/mo in subscriptions, with total business cost at 5-10x that when you add integration, training, and maintenance. Enterprise implementation runs $50K-200K for rollout.</p>
+                        
+                        <p>The economics still work. A skilled dev costs $134+/hr fully loaded. A $2K/mo AI investment delivering 3x on routine tasks pays for itself in a week.</p>
+
+                        <h2>Risks</h2>
+                        
+                        <p>Agentic AI isn't perfect. Without oversight, agents spit out bad code that takes longer to fix, or nuke your production DB. (Looking at you, Replit horror stories.) 72% of engineering leaders worry about output quality. 49% fret over maintainability.</p>
+                        
+                        <p>Hallucinations and errors: agents "vibe code" without understanding, creating vulnerabilities. Over-reliance degrades dev skills. Diminishing returns if your team's already saturated with AI IDEs. Accountability shifts to humans overseeing agents. Track provenance or you're the one holding the bag.</p>
+                        
+                        <p>Treat it like buying a used sauna on Facebook Marketplace. Great deal if it works. Inspect it first.</p>
+
+                        <h2>What to Do Monday Morning</h2>
+                        
+                        <p>Build a team of two engineers. Give them 30 days to see what an agentic team can deliver within your organization's architecture.</p>
+                        
+                        <p>Map the process: what did they build, how did they build it, what did the agents actually do? Map the bottlenecks: where did agents struggle, loop, or produce garbage? Map the wins: what shipped faster than it would have otherwise? Map the friction: what was harder than expected, what required workarounds, what annoyed the team?</p>
+
+                        <div class="article-image">
+                            <img src="/assets/perspectives/agentic-teams/07_monday_morning.png" alt="30-day pilot framework">
+                            <p class="article-image-caption">The 30-day pilot framework for agentic adoption</p>
+                        </div>
+                        
+                        <p>After 30 days, look at the results. Consider improving the outlined friction. Decide if the juice is worth the squeeze.</p>
+                        
+                        <p>That's it. Not a massive transformation initiative. Not a tool procurement process. Two engineers, 30 days, real work, honest assessment.</p>
+
+                        <div class="section-divider">• • •</div>
+
+                        <h2>Closing</h2>
+                        
+                        <p>Agentic AI is a fundamental economic shift in software development. Not a productivity tool. The orgs capturing value treat this as an operating model change, not a tool purchase.</p>
+                        
+                        <p>The cost of not leveraging this is greater than you think. Ask why your competitors are adopting it, and what you're missing.</p>
+                        
+                        <p class="pullquote">The era of "magic" AI coding is over. The era of managed, verified, economically rational AI engineering has begun.</p>
+
+                        <div class="author-bio">
+                            <div class="author-bio-text">
+                                <h4>About the Author</h4>
+                                <p>Adam Mattis is the founder of Mattis & Co, a boutique advisory firm helping organizations navigate strategic transformation. He hosts The Adam Mattis Show podcast and has led technology teams across Fortune 100 enterprises.</p>
+                                <p>Got war stories? <a href="https://twitter.com/AdamMattis13" target="_blank" rel="noopener">@AdamMattis13</a></p>
+                            </div>
+                        </div>
+
+                        <div class="article-cta-box">
+                            <h3>Thinking about agentic AI for your org?</h3>
+                            <p>We help organizations design the operating models, governance frameworks, and adoption strategies for agentic systems. Let's talk.</p>
+                            <a href="/pages/contact.html" class="btn-secondary">Discuss Your Challenge</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer will be inserted by JavaScript -->
+    </footer>
+
+    <!-- Load Scripts -->
+    <script src="/navigation.js"></script>
+    <script src="/interactions.js"></script>
+</body>
+</html>
