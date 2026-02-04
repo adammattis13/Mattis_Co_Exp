@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function injectStructuredData() {
     const path = window.location.pathname;
-    
+
     // Base Organization Schema (included on all pages)
     const organizationSchema = {
         "@context": "https://schema.org",
@@ -17,7 +17,7 @@ function injectStructuredData() {
         "alternateName": "Mattis&Co",
         "url": "https://mattisco.com",
         "logo": "https://mattisco.com/assets/mattisco - logo.webp",
-        "description": "Operator-led advisory for companies building the ecosystems, architectures, and operating models needed to compete in the age of AI.",
+        "description": "Boutique strategy consultancy for executives navigating change. We help leaders design operating models, drive digital strategy, and execute large-scale change.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "5200 Greens Dairy Rd",
@@ -42,7 +42,7 @@ function injectStructuredData() {
             "minValue": 2,
             "maxValue": 10
         },
-        "slogan": "We don't implement. We architect."
+        "slogan": "Strategic clarity for what's next."
     };
 
     // WebSite Schema
@@ -52,7 +52,7 @@ function injectStructuredData() {
         "@id": "https://mattisco.com/#website",
         "url": "https://mattisco.com",
         "name": "Mattis&Co",
-        "description": "Operator-led advisory for digital transformation",
+        "description": "Boutique strategy consultancy for executives navigating change",
         "publisher": {
             "@id": "https://mattisco.com/#organization"
         }
@@ -67,7 +67,7 @@ function injectStructuredData() {
         "url": "https://mattisco.com",
         "logo": "https://mattisco.com/assets/mattisco - logo.webp",
         "image": "https://mattisco.com/assets/mattisco - logo.webp",
-        "description": "Strategic advisory services including Ecosystem Strategy, Adaptive Architecture, and AI Operating Model consulting.",
+        "description": "Strategic advisory services including Strategy & Growth, Operating Model Design, Digital & AI Strategy, and Transformation & Change.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "5200 Greens Dairy Rd",
@@ -91,24 +91,32 @@ function injectStructuredData() {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Ecosystem Strategy",
-                        "description": "Design, build, and lead powerful ecosystems that accelerate growth, defensibility, and impact."
+                        "name": "Strategy & Growth",
+                        "description": "Market positioning, partnership strategy, growth architecture, and competitive strategy for organizations at inflection points."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Adaptive Architecture",
-                        "description": "Build organizations that sense, respond, and evolve faster than the environment around them."
+                        "name": "Operating Model Design",
+                        "description": "Organizational structure, shared services, vendor strategy, and employee experience transformation."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "AI Operating Model",
-                        "description": "Rebuild your company into an AI-native organism ready for agentic systems and multi-agent coordination."
+                        "name": "Digital & AI Strategy",
+                        "description": "Digital transformation, AI readiness, governance frameworks, and technology architecture."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Transformation & Change",
+                        "description": "M&A integration, carve-outs, divestitures, and enterprise-scale change programs."
                     }
                 }
             ]
@@ -122,91 +130,129 @@ function injectStructuredData() {
     if (path === '/' || path === '/index.html' || path === '') {
         pageSchemas = [organizationSchema, websiteSchema, professionalServiceSchema];
     }
-    // Ecosystem Strategy
-    else if (path.includes('ecosystem-strategy')) {
+    // Strategy & Growth
+    else if (path.includes('strategy-growth')) {
         pageSchemas = [
             organizationSchema,
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
                 "serviceType": "Business Consulting",
-                "name": "Ecosystem Strategy",
-                "description": "Move from linear growth to exponential, network-powered growth by orchestrating partners, platforms, and communities around your business.",
+                "name": "Strategy & Growth",
+                "description": "Market positioning, partnership strategy, growth architecture, and competitive strategy for organizations at inflection points.",
                 "provider": {
                     "@id": "https://mattisco.com/#organization"
                 },
                 "areaServed": "United States",
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Ecosystem Strategy Deliverables",
+                    "name": "Strategy & Growth Services",
                     "itemListElement": [
-                        "Ecosystem map and value-exchange model",
-                        "Partnership and platform plays",
-                        "Go-to-ecosystem roadmap",
-                        "Governance and engagement frameworks",
-                        "Metrics and playbooks for ecosystem ROI"
+                        "Growth strategy and market entry",
+                        "Partnership and ecosystem design",
+                        "Competitive positioning",
+                        "Strategic planning and alignment"
                     ]
                 }
             }
         ];
     }
-    // Adaptive Architecture
-    else if (path.includes('adaptive-architecture')) {
+    // Operating Model Design
+    else if (path.includes('operating-model')) {
         pageSchemas = [
             organizationSchema,
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
                 "serviceType": "Business Consulting",
-                "name": "Adaptive Architecture",
-                "description": "Design organizations that sense, respond, and evolve faster than the environment around them. Fixed architecture eventually fails. Adaptive architecture compounds advantage.",
+                "name": "Operating Model Design",
+                "description": "Organizational structure, shared services, vendor strategy, and employee experience transformation.",
                 "provider": {
                     "@id": "https://mattisco.com/#organization"
                 },
                 "areaServed": "United States",
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Adaptive Architecture Deliverables",
+                    "name": "Operating Model Design Services",
                     "itemListElement": [
-                        "Modular, recomposable operating core",
-                        "Real-time feedback loops",
-                        "Optionality in platforms and partnerships",
-                        "Experimentation governance",
-                        "Organizational immune system"
+                        "Organizational structure and governance",
+                        "Shared services and centralization",
+                        "Vendor strategy and insourcing",
+                        "Employee experience design"
                     ]
                 }
             }
         ];
     }
-    // AI Operating Model
-    else if (path.includes('ai-operating-model')) {
+    // Digital & AI Strategy
+    else if (path.includes('digital-ai')) {
         pageSchemas = [
             organizationSchema,
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
                 "serviceType": "Business Consulting",
-                "name": "AI Operating Model",
-                "description": "Rebuild your company into an AI-native organism ready for agentic systems, multi-agent coordination, and exponentially improving intelligence.",
+                "name": "Digital & AI Strategy",
+                "description": "Digital transformation, AI readiness, governance frameworks, and technology architecture.",
                 "provider": {
                     "@id": "https://mattisco.com/#organization"
                 },
                 "areaServed": "United States",
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "AI Operating Model Deliverables",
+                    "name": "Digital & AI Strategy Services",
                     "itemListElement": [
-                        "Decision architectures for human-AI routing",
-                        "Self-healing data systems",
-                        "Agent frameworks and orchestration",
-                        "Interface standards and safety rails",
-                        "Verification and alignment systems",
-                        "Talent evolution playbooks",
-                        "Economic alignment models"
+                        "Digital transformation strategy",
+                        "AI readiness and governance",
+                        "Technology and data architecture",
+                        "Digital operating models"
                     ]
                 }
             }
         ];
+    }
+    // Transformation & Change
+    else if (path.includes('transformation')) {
+        pageSchemas = [
+            organizationSchema,
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Business Consulting",
+                "name": "Transformation & Change",
+                "description": "Large-scale change programs, M&A integration, carve-outs, divestitures, and enterprise transformation.",
+                "provider": {
+                    "@id": "https://mattisco.com/#organization"
+                },
+                "areaServed": "United States",
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Transformation & Change Services",
+                    "itemListElement": [
+                        "Post-merger integration",
+                        "Carve-outs and divestitures",
+                        "Enterprise transformation programs",
+                        "Change management and adoption"
+                    ]
+                }
+            }
+        ];
+    }
+    // Perspectives (Articles)
+    else if (path.includes('perspectives') && !path.includes('perspectives.html')) {
+        // Individual article pages
+        const articleSchema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "author": {
+                "@type": "Person",
+                "name": "Adam Mattis"
+            },
+            "publisher": {
+                "@id": "https://mattisco.com/#organization"
+            }
+        };
+        pageSchemas = [organizationSchema, articleSchema];
     }
     // Contact page
     else if (path.includes('contact')) {
@@ -216,11 +262,56 @@ function injectStructuredData() {
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
                 "name": "Contact Mattis&Co",
-                "description": "Schedule a complimentary diagnostic session with Mattis&Co.",
+                "description": "Get in touch with Mattis & Company to discuss your transformation needs.",
                 "url": "https://mattisco.com/pages/contact.html",
                 "mainEntity": {
                     "@id": "https://mattisco.com/#organization"
                 }
+            }
+        ];
+    }
+    // Approach page
+    else if (path.includes('approach')) {
+        pageSchemas = [
+            organizationSchema,
+            {
+                "@context": "https://schema.org",
+                "@type": "AboutPage",
+                "name": "Our Approach | Mattis&Co",
+                "description": "Clarity is our operating system. We bring strategic clarity to complex transformations.",
+                "url": "https://mattisco.com/pages/approach.html",
+                "mainEntity": {
+                    "@id": "https://mattisco.com/#organization"
+                }
+            }
+        ];
+    }
+    // Case Studies
+    else if (path.includes('case-studies')) {
+        pageSchemas = [
+            organizationSchema,
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": "Case Studies | Mattis&Co",
+                "description": "Client case studies from Mattis&Co. Real transformation stories across education, healthcare, logistics, publishing, and financial services.",
+                "url": "https://mattisco.com/pages/case-studies.html",
+                "mainEntity": {
+                    "@id": "https://mattisco.com/#organization"
+                }
+            }
+        ];
+    }
+    // Events
+    else if (path.includes('events')) {
+        pageSchemas = [
+            organizationSchema,
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": "Events | Mattis&Co",
+                "description": "Executive roundtables, speaking engagements, and community events hosted by Mattis&Co.",
+                "url": "https://mattisco.com/pages/events.html"
             }
         ];
     }

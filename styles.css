@@ -457,6 +457,20 @@ main {
     z-index: 1;
 }
 
+/* Picture element wrapper for WebP support */
+picture:has(.section-bg-image) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+picture:has(.section-bg-image) .section-bg-image {
+    position: relative;
+}
+
 /* Section Overlay (40% opacity) */
 .section-overlay {
     position: absolute;
@@ -4448,4 +4462,416 @@ footer {
 
 .events-hero-full .section-bg-image {
     object-position: top center;
+}
+
+/* ============================================
+   CAREERS PAGE
+   ============================================ */
+
+/* Job Listings */
+.careers-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.career-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.career-card:hover {
+    border-color: rgba(186, 218, 85, 0.3);
+}
+
+.career-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+}
+
+.career-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0 0 0.5rem 0;
+}
+
+.career-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.career-location::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #BADA55;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.career-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.career-toggle:hover {
+    border-color: #BADA55;
+    color: #BADA55;
+}
+
+.career-toggle[aria-expanded="true"] {
+    background: rgba(186, 218, 85, 0.1);
+    border-color: #BADA55;
+    color: #BADA55;
+}
+
+.career-toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+.career-toggle svg {
+    transition: transform 0.2s ease;
+}
+
+.career-details {
+    padding: 0 2rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.career-details[hidden] {
+    display: none;
+}
+
+.career-section {
+    margin-top: 1.5rem;
+}
+
+.career-section h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #BADA55;
+    margin: 0 0 0.75rem 0;
+}
+
+.career-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 1rem 0;
+}
+
+.career-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.career-section li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.4rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.career-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 6px;
+    height: 6px;
+    background: rgba(186, 218, 85, 0.6);
+    border-radius: 50%;
+}
+
+/* Application Form */
+.application-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.application-form {
+    margin-top: 1rem;
+}
+
+.application-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.application-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.application-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+.application-form input,
+.application-form select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.application-form input:focus,
+.application-form select:focus {
+    outline: none;
+    border-color: #BADA55;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.application-form input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.application-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.application-form select option {
+    background: #1A1A1A;
+    color: #FFFFFF;
+}
+
+/* File Upload Styling */
+.file-upload-wrapper {
+    position: relative;
+}
+
+.file-upload-wrapper input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-upload-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+}
+
+.file-upload-wrapper:hover .file-upload-display {
+    border-color: #BADA55;
+    background: rgba(186, 218, 85, 0.05);
+}
+
+.file-upload-display svg {
+    flex-shrink: 0;
+    color: #BADA55;
+}
+
+.file-upload-text {
+    font-size: 0.95rem;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #BADA55;
+    font-weight: 500;
+}
+
+.file-name:not(:empty) ~ .file-upload-text {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .career-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .career-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .application-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .career-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+/* ============================================
+   LEADERSHIP PAGE
+   ============================================ */
+
+.leader-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.leader-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.leader-card:hover {
+    border-color: rgba(186, 218, 85, 0.3);
+}
+
+.leader-card-featured {
+    background: rgba(186, 218, 85, 0.05);
+    border-color: rgba(186, 218, 85, 0.2);
+}
+
+.leader-card-featured:hover {
+    border-color: rgba(186, 218, 85, 0.4);
+}
+
+.leader-headshot {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.leader-headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leader-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.5rem 0;
+}
+
+.leader-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #BADA55;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 1.25rem 0;
+}
+
+.leader-bio {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1rem 0;
+}
+
+.leader-bio:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.leader-linkedin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-top: auto;
+}
+
+.leader-linkedin:hover {
+    color: #BADA55;
+}
+
+.leader-linkedin svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Leadership responsive */
+@media (max-width: 768px) {
+    .leader-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .leader-card {
+        padding: 1.5rem;
+    }
+
+    .leader-name {
+        font-size: 1.25rem;
+    }
 }
