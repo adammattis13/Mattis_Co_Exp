@@ -28,7 +28,7 @@ function injectStructuredData() {
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+1-814-232-7404",
+            "telephone": "+1-919-278-7254",
             "contactType": "sales",
             "email": "amattis@mattisco.com"
         },
@@ -76,7 +76,7 @@ function injectStructuredData() {
             "postalCode": "27616",
             "addressCountry": "US"
         },
-        "telephone": "+1-814-232-7404",
+        "telephone": "+1-919-278-7254",
         "email": "amattis@mattisco.com",
         "priceRange": "$$$",
         "areaServed": {
