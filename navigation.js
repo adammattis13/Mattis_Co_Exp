@@ -109,7 +109,7 @@ function loadFooter() {
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; ${new Date().getFullYear()} Mattis&Co. All rights reserved.</p>
+            <p>&copy; 1997-${new Date().getFullYear()} Mattis&Co. All rights reserved.</p>
         </div>
     `;
 }
