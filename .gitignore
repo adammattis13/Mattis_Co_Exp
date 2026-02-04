@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Original/source media files (keep optimized versions only)
+*.mov
+*.psd
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
