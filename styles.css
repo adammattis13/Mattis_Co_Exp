@@ -3930,6 +3930,29 @@ footer {
     }
 }
 
+/* Back to Top Link */
+.back-to-top-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--lime-accent);
+    transition: var(--transition-base);
+    border-bottom: 1px solid transparent;
+}
+
+.back-to-top-link:hover {
+    border-bottom-color: var(--lime-accent);
+}
+
+.back-to-top-link::before {
+    content: '\2191';
+    font-size: 1.1rem;
+}
+
 /* ============================================
    TESTIMONIALS SECTION
    ============================================ */
