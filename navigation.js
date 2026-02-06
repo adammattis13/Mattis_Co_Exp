@@ -104,6 +104,7 @@ function loadFooter() {
                     <li><a href="https://www.linkedin.com/company/mattis-&-company/" target="_blank" rel="noopener">LinkedIn</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
+                    <li><a href="/pages/racing.html">Racing</a></li>
                 </ul>
             </div>
         </div>
