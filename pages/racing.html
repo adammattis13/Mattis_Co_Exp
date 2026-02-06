@@ -108,6 +108,111 @@
             margin: 0 auto;
         }
 
+        .sponsorship-form-section {
+            margin-top: 5rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sponsorship-form-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .sponsorship-form-section .form-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sponsorship-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sponsorship-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .sponsorship-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsorship-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .sponsorship-form input,
+        .sponsorship-form select,
+        .sponsorship-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .sponsorship-form input:focus,
+        .sponsorship-form select:focus,
+        .sponsorship-form textarea:focus {
+            outline: none;
+            border-color: var(--lime-accent);
+        }
+
+        .sponsorship-form input::placeholder,
+        .sponsorship-form textarea::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .sponsorship-form select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23A1A1A1' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+
+        .sponsorship-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .sponsorship-form .btn-primary-cta {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--lime-accent);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .sponsorship-form .btn-primary-cta:hover {
+            background: var(--lime-dark);
+        }
+
+        .sponsorship-form .btn-primary-cta:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 768px) {
             .racing-section,
             .racing-section.reverse {
@@ -120,6 +225,14 @@
             }
 
             .racing-intro h1 {
+                font-size: 2rem;
+            }
+
+            .sponsorship-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsorship-form-section h2 {
                 font-size: 2rem;
             }
         }
@@ -185,6 +298,65 @@
                     <h2>Our Commitment</h2>
                     <p>This isn't sponsorship for show or photo ops. We bring the same intensity and strategic edge we give our consulting clients: tightening pit stops, breaking down data, developing drivers—whatever actually moves the needle. We're here to win together.</p>
                 </div>
+
+                <!-- Sponsorship Application -->
+                <div class="sponsorship-form-section">
+                    <h2>Apply for Sponsorship</h2>
+                    <p class="form-intro">Think you've got what it takes? Tell us about your program and let's see if we're a fit.</p>
+
+                    <form id="sponsorshipForm" class="sponsorship-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="first_name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="last_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="team">Team / Driver Name *</label>
+                            <input type="text" id="team" name="team" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="discipline">Racing Discipline *</label>
+                            <select id="discipline" name="discipline" required>
+                                <option value="">Select a discipline</option>
+                                <option value="GT Racing">GT Racing</option>
+                                <option value="SuperMotocross">SuperMotocross</option>
+                                <option value="Kart Racing">Kart Racing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="series">Series / League</label>
+                            <input type="text" id="series" name="series" placeholder="e.g., IMSA, AMA Pro, SKUSA">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your program *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Your racing background, achievements, goals, and what you're looking for in a sponsor..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary-cta">Submit Application</button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -197,5 +369,6 @@
     <!-- Load Scripts -->
     <script src="/navigation.js"></script>
     <script src="/interactions.js"></script>
+    <script src="/sponsorship-form.js"></script>
 </body>
 </html>
