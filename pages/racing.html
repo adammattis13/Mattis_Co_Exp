@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mattis&Co Racing | Mattis&Co</title>
-    <meta name="description" content="Mattis&Co Racing - Supporting motorsports excellence through GT racing, motocross, and KART racing programs.">
+    <meta name="description" content="Mattis&Co Racing - Supporting motorsports excellence through GT racing, SuperMotocross, and kart racing programs.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico">
@@ -15,6 +15,115 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .racing-hero {
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+
+        .racing-hero img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
+        .racing-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .racing-intro h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .racing-intro p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .racing-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .racing-section.reverse {
+            direction: rtl;
+        }
+
+        .racing-section.reverse > * {
+            direction: ltr;
+        }
+
+        .racing-image {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .racing-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .racing-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .racing-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .commitment-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .commitment-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .commitment-section p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .racing-section,
+            .racing-section.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .racing-image img {
+                height: 300px;
+            }
+
+            .racing-intro h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Sticky Navigation -->
@@ -26,31 +135,56 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Racing Hero -->
-        <section class="section legal-content">
+        <section class="section">
             <div class="container">
-                <div class="legal-wrapper">
-                    <div style="text-align: center; margin-bottom: 3rem;">
-                        <img src="/assets/MattisCoRacing-GRN.png" alt="Mattis&Co Racing" style="max-width: 400px; width: 100%; height: auto;">
+                <!-- Racing Hero -->
+                <div class="racing-hero">
+                    <img src="/assets/MattisCoRacing-GRN.png" alt="Mattis&Co Racing">
+                </div>
+
+                <!-- Intro -->
+                <div class="racing-intro">
+                    <h1>Mattis&Co Racing</h1>
+                    <p>At Mattis&Co, we believe in the power of competition, precision, and relentless pursuit of excellence. Our Racing program reflects these values through active support of motorsports at every level.</p>
+                </div>
+
+                <!-- GT Racing -->
+                <div class="racing-section">
+                    <div class="racing-image">
+                        <img src="/assets/GT Racing.jpg" alt="GT Racing">
                     </div>
-
-                    <h1 class="legal-title">Mattis&Co Racing</h1>
-
-                    <div class="legal-body">
-                        <p class="lead-text">At Mattis&Co, we believe in the power of competition, precision, and relentless pursuit of excellence. Our Racing program reflects these values through active support of motorsports at every level.</p>
-
+                    <div class="racing-content">
                         <h2>GT Racing</h2>
                         <p>We back GT programs that push cars, engineering, and drivers right to the edge. Endurance or sprint, it's all strategy and execution under real pressure. That's exactly how we think about consulting: clear calls, no bullshit, actual results.</p>
+                    </div>
+                </div>
 
-                        <h2>Motocross</h2>
-                        <p>Motocross is unforgiving. Half a second to react, body taking a beating, mind has to stay locked in. We support riders and teams who can handle that kind of chaos because we respect the same ability to adapt fast and still deliver when it matters most.</p>
+                <!-- SuperMotocross -->
+                <div class="racing-section reverse">
+                    <div class="racing-image">
+                        <img src="/assets/SMX.jpg" alt="SuperMotocross">
+                    </div>
+                    <div class="racing-content">
+                        <h2>SuperMotocross</h2>
+                        <p>SuperMotocross is unforgiving. Half a second to react, body taking a beating, mind has to stay locked in. We support riders and teams who can handle that kind of chaos because we respect the same ability to adapt fast and still deliver when it matters most.</p>
+                    </div>
+                </div>
 
+                <!-- Kart Racing -->
+                <div class="racing-section">
+                    <div class="racing-image">
+                        <img src="/assets/KART.webp" alt="Kart Racing">
+                    </div>
+                    <div class="racing-content">
                         <h2>Kart Racing</h2>
                         <p>Every big name started in karts. We put real resources behind karting programs to help build the next wave. We give young drivers the equipment, coaching, and real opportunities they need to turn raw talent into something legit.</p>
-
-                        <h2>Our Commitment</h2>
-                        <p>This isn't just sponsorship or showing up for photos. We bring the same intensity and strategic edge we give our consulting clients: tightening pit stops, breaking down data, developing drivers, whatever moves the needle. We're here to win together.</p>
                     </div>
+                </div>
+
+                <!-- Our Commitment -->
+                <div class="commitment-section">
+                    <h2>Our Commitment</h2>
+                    <p>This isn't just sponsorship or showing up for photos. We bring the same intensity and strategic edge we give our consulting clients: tightening pit stops, breaking down data, developing drivers, whatever moves the needle. We're here to win together.</p>
                 </div>
             </div>
         </section>
