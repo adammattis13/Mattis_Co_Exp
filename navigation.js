@@ -39,7 +39,7 @@ function loadNavigation() {
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">About</a>
                     <ul class="dropdown-menu">
-                        <!-- <li><a href="/pages/leadership.html">Leadership</a></li> -->
+                        <li><a href="/pages/leadership.html">Leadership</a></li>
                         <li><a href="/pages/partners.html">Partners</a></li>
                         <li><a href="/pages/events.html">Events</a></li>
                         <li><a href="/pages/careers.html">Careers</a></li>
@@ -87,7 +87,7 @@ function loadFooter() {
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <!-- <li><a href="/pages/leadership.html">Leadership</a></li> -->
+                    <li><a href="/pages/leadership.html">Leadership</a></li>
                     <li><a href="/pages/partners.html">Partners</a></li>
                     <li><a href="/pages/events.html">Events</a></li>
                     <li><a href="/pages/case-studies.html">Case Studies</a></li>
