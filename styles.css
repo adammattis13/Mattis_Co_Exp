@@ -3053,6 +3053,12 @@ footer {
     border-color: rgba(186, 218, 85, 0.2);
 }
 
+/* Page Header (used on Leadership, Case Studies, etc.) */
+.page-header {
+    padding: 160px 0 80px;
+    background: var(--bg-primary);
+}
+
 /* Perspectives Page Styles */
 .perspectives-page-header {
     padding: 160px 0 80px;
