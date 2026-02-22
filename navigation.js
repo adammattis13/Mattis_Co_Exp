@@ -18,37 +18,14 @@ function loadNavigation() {
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="logo-image">
                 </a>
             </div>
-            
+
             <ul class="nav-menu">
-                <li><a href="/index.html">Home</a></li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Practices</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/pages/practices/strategy-growth.html">Strategy & Growth</a></li>
-                        <li><a href="/pages/practices/operating-model.html">Operating Model Design</a></li>
-                        <li><a href="/pages/practices/digital-ai.html">Digital & AI Strategy</a></li>
-                        <li><a href="/pages/practices/transformation.html">Transformation & Change</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="/pages/approach.html">Approach</a></li>
-                
-                <li><a href="/pages/perspectives.html">Perspectives</a></li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">About</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/pages/leadership.html">Leadership</a></li>
-                        <li><a href="/pages/partners.html">Partners</a></li>
-                        <li><a href="/pages/events.html">Events</a></li>
-                        <li><a href="/pages/careers.html">Careers</a></li>
-                    </ul>
-                </li>
-                
+                <li><a href="/pages/services.html">Services</a></li>
+                <li><a href="/pages/leadership.html">Leadership</a></li>
+                <li><a href="/pages/case-studies.html">Case Studies</a></li>
                 <li><a href="/pages/contact.html" class="nav-cta">Contact</a></li>
             </ul>
-            
+
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -56,8 +33,6 @@ function loadNavigation() {
             </button>
         </div>
     `;
-
-    initializeDropdowns();
 }
 
 function loadFooter() {
@@ -71,114 +46,62 @@ function loadFooter() {
                     <img src="/assets/mattisco - logo.webp" alt="Mattis&Co" class="footer-logo-image">
                 </div>
                 <p class="footer-tagline">Strategic clarity for what's next.</p>
-                <p class="footer-subtitle">Boutique strategy consultancy for executives navigating change.</p>
+                <p class="footer-subtitle">Strategic advisory for services businesses ready to scale.</p>
             </div>
-            
+
             <div class="footer-column">
-                <h4>Practices</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="/pages/practices/strategy-growth.html">Strategy & Growth</a></li>
-                    <li><a href="/pages/practices/operating-model.html">Operating Model Design</a></li>
-                    <li><a href="/pages/practices/digital-ai.html">Digital & AI Strategy</a></li>
-                    <li><a href="/pages/practices/transformation.html">Transformation & Change</a></li>
+                    <li><a href="/pages/services.html#advisory">Advisory</a></li>
+                    <li><a href="/pages/services.html#mna">M&A</a></li>
+                    <li><a href="/pages/services.html#scaling">Scaling</a></li>
+                    <li><a href="/pages/services.html#exit-strategy">Exit Strategy</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="/pages/leadership.html">Leadership</a></li>
-                    <li><a href="/pages/partners.html">Partners</a></li>
-                    <li><a href="/pages/events.html">Events</a></li>
                     <li><a href="/pages/case-studies.html">Case Studies</a></li>
-                    <li><a href="/pages/careers.html">Careers</a></li>
                     <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/pages/racing.html">Racing</a></li>
+                    <li><a href="/pages/memorial.html">Memorial</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
-                <h4>Resources</h4>
+                <h4>Connect</h4>
                 <ul>
-                    <li><a href="/pages/perspectives.html">Perspectives</a></li>
-                    <li><a href="https://www.theadammattisshow.com/" target="_blank" rel="noopener">Podcast</a></li>
                     <li><a href="https://www.linkedin.com/company/mattis-&-company/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://www.theadammattisshow.com/" target="_blank" rel="noopener">Podcast</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Hardpoint Capital</a></li>
                     <li><a href="/pages/privacy.html">Privacy</a></li>
                     <li><a href="/pages/terms.html">Terms</a></li>
-                    <li><a href="/pages/racing.html">Racing</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 1997-${new Date().getFullYear()} Mattis&Co. All rights reserved.</p>
         </div>
     `;
 }
 
-function initializeDropdowns() {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        let closeTimeout;
-        
-        // Desktop: hover behavior with delay
-        dropdown.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) {
-                clearTimeout(closeTimeout);
-                menu.style.display = 'block';
-            }
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 768) {
-                closeTimeout = setTimeout(() => {
-                    menu.style.display = 'none';
-                }, 500);
-            }
-        });
-        
-        // Keep menu open when hovering over it
-        menu.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) {
-                clearTimeout(closeTimeout);
-                menu.style.display = 'block';
-            }
-        });
-        
-        menu.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 768) {
-                closeTimeout = setTimeout(() => {
-                    menu.style.display = 'none';
-                }, 500);
-            }
-        });
-        
-        // Mobile: click behavior
-        toggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-}
-
 function initializeMobileMenu() {
     const toggle = document.querySelector('.mobile-menu-toggle');
     const menu = document.querySelector('.nav-menu');
     const body = document.body;
-    
+
     if (!toggle || !menu) return;
-    
+
     toggle.addEventListener('click', function(e) {
         e.stopPropagation();
         toggle.classList.toggle('active');
         menu.classList.toggle('active');
         body.classList.toggle('menu-open');
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!menu.contains(e.target) && !toggle.contains(e.target)) {
@@ -187,7 +110,7 @@ function initializeMobileMenu() {
             body.classList.remove('menu-open');
         }
     });
-    
+
     // Close menu on nav link click
     const navLinks = menu.querySelectorAll('a');
     navLinks.forEach(link => {
