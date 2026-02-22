@@ -17,7 +17,7 @@ function injectStructuredData() {
         "alternateName": "Mattis&Co",
         "url": "https://mattisco.com",
         "logo": "https://mattisco.com/assets/mattisco - logo.webp",
-        "description": "Boutique strategy consultancy for executives navigating change. We help leaders design operating models, drive digital strategy, and execute large-scale change.",
+        "description": "Strategic advisory for services businesses ready to scale—and the firms that fund them. Advisory, M&A, Scaling, and Exit Strategy from operators who've built what you're building.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "5200 Greens Dairy Rd",
@@ -52,7 +52,7 @@ function injectStructuredData() {
         "@id": "https://mattisco.com/#website",
         "url": "https://mattisco.com",
         "name": "Mattis&Co",
-        "description": "Boutique strategy consultancy for executives navigating change",
+        "description": "Strategic advisory for scaling services businesses",
         "publisher": {
             "@id": "https://mattisco.com/#organization"
         }
@@ -67,7 +67,7 @@ function injectStructuredData() {
         "url": "https://mattisco.com",
         "logo": "https://mattisco.com/assets/mattisco - logo.webp",
         "image": "https://mattisco.com/assets/mattisco - logo.webp",
-        "description": "Strategic advisory services including Strategy & Growth, Operating Model Design, Digital & AI Strategy, and Transformation & Change.",
+        "description": "Strategic advisory services for scaling services businesses: Advisory, M&A, Scaling, and Exit Strategy.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "5200 Greens Dairy Rd",
@@ -91,32 +91,32 @@ function injectStructuredData() {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Strategy & Growth",
-                        "description": "Market positioning, partnership strategy, growth architecture, and competitive strategy for organizations at inflection points."
+                        "name": "Advisory",
+                        "description": "Strategic guidance for business owners navigating growth, operational complexity, or market shifts. Fractional executive advisory, board-level counsel, and strategic planning."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Operating Model Design",
-                        "description": "Organizational structure, shared services, vendor strategy, and employee experience transformation."
+                        "name": "M&A",
+                        "description": "Buy-side and sell-side advisory for services businesses. Due diligence, deal structuring, valuation preparation, and integration planning."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Digital & AI Strategy",
-                        "description": "Digital transformation, AI readiness, governance frameworks, and technology architecture."
+                        "name": "Scaling",
+                        "description": "Operational infrastructure for growth: org design, process buildout, revenue operations, delivery model optimization, and go-to-market strategy."
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Transformation & Change",
-                        "description": "M&A integration, carve-outs, divestitures, and enterprise-scale change programs."
+                        "name": "Exit Strategy",
+                        "description": "Positioning businesses for successful exits: financial readiness, operational cleanup, valuation optimization, buyer targeting, and transition planning."
                     }
                 }
             ]
@@ -130,117 +130,51 @@ function injectStructuredData() {
     if (path === '/' || path === '/index.html' || path === '') {
         pageSchemas = [organizationSchema, websiteSchema, professionalServiceSchema];
     }
-    // Strategy & Growth
-    else if (path.includes('strategy-growth')) {
+    // Services page
+    else if (path.includes('services')) {
         pageSchemas = [
             organizationSchema,
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
                 "serviceType": "Business Consulting",
-                "name": "Strategy & Growth",
-                "description": "Market positioning, partnership strategy, growth architecture, and competitive strategy for organizations at inflection points.",
+                "name": "Mattis&Co Advisory Services",
+                "description": "Strategic advisory services for scaling services businesses: Advisory, M&A, Scaling, and Exit Strategy.",
                 "provider": {
                     "@id": "https://mattisco.com/#organization"
                 },
                 "areaServed": "United States",
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Strategy & Growth Services",
+                    "name": "Service Pillars",
                     "itemListElement": [
-                        "Growth strategy and market entry",
-                        "Partnership and ecosystem design",
-                        "Competitive positioning",
-                        "Strategic planning and alignment"
+                        "Advisory — Fractional executive advisory and strategic planning",
+                        "M&A — Buy-side and sell-side advisory for services businesses",
+                        "Scaling — Operational infrastructure for growth",
+                        "Exit Strategy — Positioning businesses for successful exits"
                     ]
                 }
             }
         ];
     }
-    // Operating Model Design
-    else if (path.includes('operating-model')) {
+    // Leadership page
+    else if (path.includes('leadership')) {
         pageSchemas = [
             organizationSchema,
             {
                 "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Business Consulting",
-                "name": "Operating Model Design",
-                "description": "Organizational structure, shared services, vendor strategy, and employee experience transformation.",
-                "provider": {
+                "@type": "AboutPage",
+                "name": "Leadership | Mattis&Co",
+                "description": "Meet the operators behind Mattis&Co. We've built, scaled, and exited services businesses.",
+                "url": "https://mattisco.com/pages/leadership.html",
+                "mainEntity": {
                     "@id": "https://mattisco.com/#organization"
-                },
-                "areaServed": "United States",
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Operating Model Design Services",
-                    "itemListElement": [
-                        "Organizational structure and governance",
-                        "Shared services and centralization",
-                        "Vendor strategy and insourcing",
-                        "Employee experience design"
-                    ]
-                }
-            }
-        ];
-    }
-    // Digital & AI Strategy
-    else if (path.includes('digital-ai')) {
-        pageSchemas = [
-            organizationSchema,
-            {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Business Consulting",
-                "name": "Digital & AI Strategy",
-                "description": "Digital transformation, AI readiness, governance frameworks, and technology architecture.",
-                "provider": {
-                    "@id": "https://mattisco.com/#organization"
-                },
-                "areaServed": "United States",
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Digital & AI Strategy Services",
-                    "itemListElement": [
-                        "Digital transformation strategy",
-                        "AI readiness and governance",
-                        "Technology and data architecture",
-                        "Digital operating models"
-                    ]
-                }
-            }
-        ];
-    }
-    // Transformation & Change
-    else if (path.includes('transformation')) {
-        pageSchemas = [
-            organizationSchema,
-            {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Business Consulting",
-                "name": "Transformation & Change",
-                "description": "Large-scale change programs, M&A integration, carve-outs, divestitures, and enterprise transformation.",
-                "provider": {
-                    "@id": "https://mattisco.com/#organization"
-                },
-                "areaServed": "United States",
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Transformation & Change Services",
-                    "itemListElement": [
-                        "Post-merger integration",
-                        "Carve-outs and divestitures",
-                        "Enterprise transformation programs",
-                        "Change management and adoption"
-                    ]
                 }
             }
         ];
     }
     // Perspectives (Articles)
-    else if (path.includes('perspectives') && !path.includes('perspectives.html')) {
-        // Individual article pages
+    else if (path.includes('perspectives')) {
         const articleSchema = {
             "@context": "https://schema.org",
             "@type": "Article",
@@ -262,24 +196,8 @@ function injectStructuredData() {
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
                 "name": "Contact Mattis&Co",
-                "description": "Get in touch with Mattis & Company to discuss your transformation needs.",
+                "description": "Start a conversation with Mattis&Co about scaling your services business, M&A advisory, or exit planning.",
                 "url": "https://mattisco.com/pages/contact.html",
-                "mainEntity": {
-                    "@id": "https://mattisco.com/#organization"
-                }
-            }
-        ];
-    }
-    // Approach page
-    else if (path.includes('approach')) {
-        pageSchemas = [
-            organizationSchema,
-            {
-                "@context": "https://schema.org",
-                "@type": "AboutPage",
-                "name": "Our Approach | Mattis&Co",
-                "description": "Clarity is our operating system. We bring strategic clarity to complex transformations.",
-                "url": "https://mattisco.com/pages/approach.html",
                 "mainEntity": {
                     "@id": "https://mattisco.com/#organization"
                 }
@@ -294,24 +212,11 @@ function injectStructuredData() {
                 "@context": "https://schema.org",
                 "@type": "CollectionPage",
                 "name": "Case Studies | Mattis&Co",
-                "description": "Client case studies from Mattis&Co. Real transformation stories across education, healthcare, logistics, publishing, and financial services.",
+                "description": "Real results from real engagements. Case studies in scaling operations, M&A preparation, operational unification, and strategic repositioning.",
                 "url": "https://mattisco.com/pages/case-studies.html",
                 "mainEntity": {
                     "@id": "https://mattisco.com/#organization"
                 }
-            }
-        ];
-    }
-    // Events
-    else if (path.includes('events')) {
-        pageSchemas = [
-            organizationSchema,
-            {
-                "@context": "https://schema.org",
-                "@type": "CollectionPage",
-                "name": "Events | Mattis&Co",
-                "description": "Executive roundtables, speaking engagements, and community events hosted by Mattis&Co.",
-                "url": "https://mattisco.com/pages/events.html"
             }
         ];
     }

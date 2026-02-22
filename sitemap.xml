@@ -3,85 +3,101 @@
     <!-- Homepage -->
     <url>
         <loc>https://mattisco.com/</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
-    <!-- Approach -->
-    <url>
-        <loc>https://mattisco.com/pages/approach.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
+
     <!-- Services -->
     <url>
-        <loc>https://mattisco.com/pages/ecosystem-strategy.html</loc>
-        <lastmod>2025-12-12</lastmod>
+        <loc>https://mattisco.com/pages/services.html</loc>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-    <url>
-        <loc>https://mattisco.com/pages/adaptive-architecture.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mattisco.com/pages/ai-operating-model.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- About Pages -->
+
+    <!-- Leadership -->
     <url>
         <loc>https://mattisco.com/pages/leadership.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://mattisco.com/pages/partners.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://mattisco.com/pages/careers.html</loc>
-        <lastmod>2025-12-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Contact -->
-    <url>
-        <loc>https://mattisco.com/pages/contact.html</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Memorial -->
+
+    <!-- Case Studies -->
     <url>
-        <loc>https://mattisco.com/pages/memorial.html</loc>
-        <lastmod>2025-12-12</lastmod>
+        <loc>https://mattisco.com/pages/case-studies.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact -->
+    <url>
+        <loc>https://mattisco.com/pages/contact.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Perspectives (kept articles) -->
+    <url>
+        <loc>https://mattisco.com/pages/perspectives/ai-magnifies-dysfunction.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mattisco.com/pages/perspectives/operating-model-debt.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mattisco.com/pages/perspectives/change-as-capability.html</loc>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
-    
+    <url>
+        <loc>https://mattisco.com/pages/perspectives/ai-governance.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://mattisco.com/pages/perspectives/partnerships.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Racing -->
+    <url>
+        <loc>https://mattisco.com/pages/racing.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- Memorial -->
+    <url>
+        <loc>https://mattisco.com/pages/memorial.html</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
     <!-- Legal -->
     <url>
         <loc>https://mattisco.com/pages/privacy.html</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://mattisco.com/pages/terms.html</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

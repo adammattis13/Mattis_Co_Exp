@@ -4,5 +4,18 @@
       "memory": 1024,
       "maxDuration": 10
     }
-  }
+  },
+  "redirects": [
+    { "source": "/pages/approach.html", "destination": "/pages/services.html", "permanent": true },
+    { "source": "/pages/practices/strategy-growth.html", "destination": "/pages/services.html", "permanent": true },
+    { "source": "/pages/practices/operating-model.html", "destination": "/pages/services.html", "permanent": true },
+    { "source": "/pages/practices/digital-ai.html", "destination": "/pages/services.html", "permanent": true },
+    { "source": "/pages/practices/transformation.html", "destination": "/pages/services.html", "permanent": true },
+    { "source": "/pages/partners.html", "destination": "/pages/leadership.html", "permanent": true },
+    { "source": "/pages/events.html", "destination": "/", "permanent": true },
+    { "source": "/pages/careers.html", "destination": "/pages/contact.html", "permanent": true },
+    { "source": "/pages/perspectives.html", "destination": "/", "permanent": true },
+    { "source": "/pages/perspectives/cultural-intelligence.html", "destination": "/", "permanent": true },
+    { "source": "/pages/perspectives/agentic-teams-whitepaper.html", "destination": "/", "permanent": true }
+  ]
 }
