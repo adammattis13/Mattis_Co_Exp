@@ -21,7 +21,6 @@ function loadNavigation() {
 
             <ul class="nav-menu">
                 <li><a href="/pages/services.html">Services</a></li>
-                <li><a href="/pages/leadership.html">Leadership</a></li>
                 <li><a href="/pages/case-studies.html">Case Studies</a></li>
                 <li><a href="/pages/contact.html" class="nav-cta">Contact</a></li>
             </ul>
