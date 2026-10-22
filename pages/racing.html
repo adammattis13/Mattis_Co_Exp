@@ -287,7 +287,12 @@
                     <h2>Apply for Sponsorship</h2>
                     <p class="form-intro">Think you've got what it takes? Tell us about your program and let's see if we're a fit.</p>
 
-                    <form id="sponsorshipForm" class="sponsorship-form">
+                    <form method="post" action="/api/sponsorship" id="sponsorshipForm" class="sponsorship-form">
+                            <div hidden aria-hidden="true">
+                                <label>Leave this field empty
+                                    <input type="text" name="website" tabindex="-1" autocomplete="off">
+                                </label>
+                            </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>

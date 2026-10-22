@@ -1,27 +1,18 @@
+import { validateSubmission, escapeHtml } from '../lib/form-security.js';
+
 // Vercel Serverless Function - Pipedrive Integration
 // Place this file at: /api/contact.js
 
 export default async function handler(req, res) {
-    // Only allow POST requests
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
-
-    const { firstName, lastName, email, phone, company, interest, message } = req.body;
-
-    // Validate required fields
-    if (!firstName || !lastName || !email || !message) {
-        return res.status(400).json({ 
-            success: false, 
-            error: 'Missing required fields' 
-        });
-    }
+    const data = validateSubmission(req, res, ["firstName", "lastName", "email", "message"], ["phone", "company", "interest"]);
+    if (!data) return;
+    const { firstName, lastName, email, phone, company, interest, message } = data;
 
     // Get Pipedrive credentials from environment variables
     const PIPEDRIVE_API_TOKEN = process.env.PIPEDRIVE_API_TOKEN;
     const PIPEDRIVE_DOMAIN = process.env.PIPEDRIVE_DOMAIN; // e.g., 'mattisco'
 
-    if (!PIPEDRIVE_API_TOKEN || !PIPEDRIVE_DOMAIN) {
+    if (!PIPEDRIVE_API_TOKEN || !/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i.test(PIPEDRIVE_DOMAIN || '')) {
         console.error('Missing Pipedrive configuration');
         return res.status(500).json({ 
             success: false, 
@@ -32,10 +23,12 @@ export default async function handler(req, res) {
     try {
         // Step 1: Create or Update Person in Pipedrive
         const personResponse = await fetch(
-            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/persons?api_token=${PIPEDRIVE_API_TOKEN}`,
+            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/persons`,
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'x-api-token': PIPEDRIVE_API_TOKEN },
+                signal: AbortSignal.timeout(2500),
+                redirect: 'error',
                 body: JSON.stringify({
                     name: `${firstName} ${lastName}`,
                     email: [{ value: email, primary: true, label: 'work' }],
@@ -47,8 +40,8 @@ export default async function handler(req, res) {
 
         const personData = await personResponse.json();
 
-        if (!personData.success) {
-            console.error('Pipedrive Person Error:', personData);
+        if (!personResponse.ok || !personData.success) {
+            console.error('Pipedrive person request failed');
             throw new Error('Failed to create person in Pipedrive');
         }
 
@@ -58,10 +51,12 @@ export default async function handler(req, res) {
             : `${firstName} ${lastName} - ${interest || 'Website Inquiry'}`;
 
         const leadResponse = await fetch(
-            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/leads?api_token=${PIPEDRIVE_API_TOKEN}`,
+            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/leads`,
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'x-api-token': PIPEDRIVE_API_TOKEN },
+                signal: AbortSignal.timeout(2500),
+                redirect: 'error',
                 body: JSON.stringify({
                     title: leadTitle,
                     person_id: personData.data.id,
@@ -76,8 +71,8 @@ export default async function handler(req, res) {
 
         const leadData = await leadResponse.json();
 
-        if (!leadData.success) {
-            console.error('Pipedrive Lead Error:', leadData);
+        if (!leadResponse.ok || !leadData.success) {
+            console.error('Pipedrive lead request failed');
             throw new Error('Failed to create lead in Pipedrive');
         }
 
@@ -95,12 +90,14 @@ ${message}
 Submitted via mattisco.com contact form`;
 
         const noteResponse = await fetch(
-            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/notes?api_token=${PIPEDRIVE_API_TOKEN}`,
+            `https://${PIPEDRIVE_DOMAIN}.pipedrive.com/api/v1/notes`,
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'x-api-token': PIPEDRIVE_API_TOKEN },
+                signal: AbortSignal.timeout(2500),
+                redirect: 'error',
                 body: JSON.stringify({
-                    content: noteContent,
+                    content: escapeHtml(noteContent).replace(/\n/g, '<br>'),
                     lead_id: leadData.data.id,
                     person_id: personData.data.id
                 })
@@ -115,13 +112,11 @@ Submitted via mattisco.com contact form`;
         // Success response
         return res.status(200).json({ 
             success: true, 
-            message: 'Thank you! We\'ll be in touch within 24 hours.',
-            leadId: leadData.data.id,
-            personId: personData.data.id
+            message: 'Thank you! We\'ll be in touch within 24 hours.'
         });
 
     } catch (error) {
-        console.error('Pipedrive Integration Error:', error);
+        console.error('Pipedrive integration failed');
         
         // Return user-friendly error
         return res.status(500).json({ 

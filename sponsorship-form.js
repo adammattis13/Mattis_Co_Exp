@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             team: formData.get('team'),
             discipline: formData.get('discipline'),
             series: formData.get('series') || '',
-            message: formData.get('message')
+            message: formData.get('message'),
+            website: formData.get('website') || ''
         };
 
         try {

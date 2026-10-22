@@ -6,16 +6,100 @@
     }
   },
   "redirects": [
-    { "source": "/pages/approach.html", "destination": "/pages/services.html", "permanent": true },
-    { "source": "/pages/practices/strategy-growth.html", "destination": "/pages/services.html", "permanent": true },
-    { "source": "/pages/practices/operating-model.html", "destination": "/pages/services.html", "permanent": true },
-    { "source": "/pages/practices/digital-ai.html", "destination": "/pages/services.html", "permanent": true },
-    { "source": "/pages/practices/transformation.html", "destination": "/pages/services.html", "permanent": true },
-    { "source": "/pages/partners.html", "destination": "/pages/leadership.html", "permanent": true },
-    { "source": "/pages/events.html", "destination": "/", "permanent": true },
-    { "source": "/pages/careers.html", "destination": "/pages/contact.html", "permanent": true },
-    { "source": "/pages/perspectives.html", "destination": "/", "permanent": true },
-    { "source": "/pages/perspectives/cultural-intelligence.html", "destination": "/", "permanent": true },
-    { "source": "/pages/perspectives/agentic-teams-whitepaper.html", "destination": "/", "permanent": true }
+    {
+      "source": "/pages/approach.html",
+      "destination": "/pages/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/practices/strategy-growth.html",
+      "destination": "/pages/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/practices/operating-model.html",
+      "destination": "/pages/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/practices/digital-ai.html",
+      "destination": "/pages/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/practices/transformation.html",
+      "destination": "/pages/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/partners.html",
+      "destination": "/pages/leadership.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/events.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/careers.html",
+      "destination": "/pages/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/pages/perspectives.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/perspectives/cultural-intelligence.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/perspectives/agentic-teams-whitepaper.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
   ]
 }
